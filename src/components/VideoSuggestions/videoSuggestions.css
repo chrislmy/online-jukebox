@@ -1,0 +1,31 @@
+.Suggestion-Container {
+    list-style: none;
+    display: inline;
+}
+
+.Suggestion-Thumbnail {
+    height: 60%;
+    width: 75%;
+}
+
+.Video-List {
+    padding: 0;
+}
+
+.Panel-Wrapper {
+    border-color: #00e9de;
+}
+
+.Panel-Wrapper > .panel-body {
+    background: #3a3a3a;
+}
+
+.Panel-Wrapper > .panel-heading {
+    background: #1d1d1d;
+    color: white;
+    font-weight: bold;
+}
+
+.Add-Video-Button {
+    margin-top: 1rem;
+}

@@ -1,0 +1,18 @@
+.Player-Container {
+    margin-bottom: 1.5rem;
+    margin-left: 1.5rem;
+    pointer-events: none;
+    padding: 1.5rem;
+    padding-bottom: 2.5rem;
+    background: rgb(0, 0, 0, 0.7);
+    border-radius: 1.2rem 1.2rem 1rem 1rem;
+}
+
+.Player-Container-Debug {
+    margin-bottom: 1.5rem;
+    margin-left: 1.5rem;
+    padding: 1.5rem;
+    padding-bottom: 2.5rem;
+    background: rgb(0, 0, 0, 0.7);
+    border-radius: 1.2rem 1.2rem 1rem 1rem;
+}

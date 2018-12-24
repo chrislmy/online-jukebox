@@ -1,0 +1,10 @@
+const socketMessages = {
+    NEW_USER: 'NEW_USER',
+    USER_JOINED: 'USER_JOINED',
+    FETCH_PLAYLIST: 'FETCH_PLAYLIST',
+    UPDATE_PLAYLIST: 'UPDATE_PLAYLIST',
+    PLAY_NEXT_VIDEO: 'PLAY_NEXT_VIDEO',
+    ADD_TO_PLAYLIST: 'ADD_TO_PLAYLIST'
+ }
+
+ export default socketMessages;

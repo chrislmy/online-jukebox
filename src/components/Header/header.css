@@ -1,0 +1,27 @@
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 90px;
+}
+
+.App-header {
+    background-color: #222;
+    height: 220px;
+    padding: 20px;
+    color: white;
+}
+
+.App-title {
+    font-size: 1.5rem;
+}
+
+.Now-Playing-Icon {
+    margin-right: 1.5rem;
+}
+
+.Tear-Icon {
+    margin-left: 1rem;
+}
+
+.Username-Field {
+    color: #00e9de
+}

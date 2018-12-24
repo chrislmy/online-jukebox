@@ -1,0 +1,61 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.App {
+  text-align: center;
+  height: 100;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.Main-Container {
+  padding: 1.5rem;
+  background: #00e9de;
+}
+
+.Current-Playlist {
+  text-align: center;
+}
+
+.Search-Bar-Wrapper {
+  flex: 1 0 auto;
+  background: #222;
+  padding-top: 1.5rem;
+}
+
+@media only screen and (min-width: 1000px) {
+  .Player-View-Container {
+    display: inline-flex;
+  }
+  .Current-Playlist {
+    padding-right: 3rem;
+    text-align: left;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

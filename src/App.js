@@ -5,6 +5,7 @@ import SearchBar from './components/SearchBar/searchBar';
 import YoutubePlayer from './components/YoutubePlayer/youtubePlayer';
 import socketActions from './actions/socketActions/socket-actions';
 import Playlist from './components/Playlist/playlist';
+import NavigationBar from './components/Navbar/navbar';
 
 class App extends Component {
     componentDidMount() {
@@ -14,6 +15,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
+                <NavigationBar />
                 <Header />
                 <div className="Main-Container">
                     <div className="Player-View-Container">

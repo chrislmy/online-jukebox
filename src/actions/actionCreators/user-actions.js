@@ -5,6 +5,12 @@ const updateUsername = (username) => ({
     data: username
 });
 
+const updateLobbyUsers = (users) => ({
+    type: types.UPDATE_USERS,
+    data: users
+});
+
 export default {
-    updateUsername
+    updateUsername,
+    updateLobbyUsers
 }

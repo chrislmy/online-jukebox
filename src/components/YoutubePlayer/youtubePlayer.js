@@ -51,7 +51,7 @@ class YoutubePlayerView extends React.Component {
     _onStateChange(event) {
         // Mounted
         if(event.data === -1) {
-            event.target.seekTo(50,true);
+            // event.target.seekTo(50,true);
         }
 
         // Finished playing

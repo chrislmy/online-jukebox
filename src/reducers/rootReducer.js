@@ -31,6 +31,16 @@ const user = (state = initialState.initialUser, action) => {
     }
 }
 
-const rootReducer = combineReducers({video, playlist, user});
+
+const lobby = (state = initialState.initialLobby, action) => {
+    switch (action.type) {
+        case types.UPDATE_USERS:
+            return { ...state, users: action.data };
+        default:
+            return state;
+    }
+}
+
+const rootReducer = combineReducers({video, playlist, user, lobby});
 
 export default rootReducer;

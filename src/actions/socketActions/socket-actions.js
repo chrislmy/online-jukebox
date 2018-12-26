@@ -23,6 +23,14 @@ const setupUserConnection = () => {
     })
 }
 
+// Initialises socket lobby connection with server
+const setupLobbyConnection = () => {
+    socket.emit(socketMessages.FETCH_LOBBY_USERS);
+    socket.on(socketMessages.UPDATE_LOBBY_USERS, (users) => {
+        store.dispatch(userActions.updateLobbyUsers(users));
+    })
+}
+
 // Initialises socket playlist connection with server
 const setupPlaylistConnection = () => {
     socket.emit(socketMessages.FETCH_PLAYLIST);
@@ -47,6 +55,7 @@ const addToPlaylist = (video) => {
 const initialSetup = () => {
     setupUserConnection();
     setupPlaylistConnection();
+    setupLobbyConnection();
 }
 
 export default {

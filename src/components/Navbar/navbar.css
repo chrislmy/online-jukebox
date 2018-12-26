@@ -1,0 +1,22 @@
+/* Overide bootstrap navbar */
+
+.navbar {
+    border-radius: 0;
+    border-bottom: 1px solid white;
+    margin-bottom: 0; 
+}
+
+.navbar > .container {
+    width: 85%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.navbar-inverse .navbar-brand {
+    font-weight: 550;
+    color: #00e9de;
+}
+
+#Users-Nav-Dropdown {
+    color: white;
+}

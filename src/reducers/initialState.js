@@ -11,8 +11,13 @@ const initialUser = {
     username: ''
 }
 
+const initialLobby = {
+    users: []
+}
+
 export default {
     initialVideo,
     initialPlaylist,
-    initialUser
+    initialUser,
+    initialLobby
 }

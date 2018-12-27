@@ -1,7 +1,7 @@
 {
   "main.css": "/online-jukebox/static/css/main.d12efa41.chunk.css",
-  "main.js": "/online-jukebox/static/js/main.269adbf5.chunk.js",
-  "main.js.map": "/online-jukebox/static/js/main.269adbf5.chunk.js.map",
+  "main.js": "/online-jukebox/static/js/main.fe21d128.chunk.js",
+  "main.js.map": "/online-jukebox/static/js/main.fe21d128.chunk.js.map",
   "static/js/1.6aecc90b.chunk.js": "/online-jukebox/static/js/1.6aecc90b.chunk.js",
   "static/js/1.6aecc90b.chunk.js.map": "/online-jukebox/static/js/1.6aecc90b.chunk.js.map",
   "runtime~main.js": "/online-jukebox/static/js/runtime~main.42659c6e.js",
@@ -9,6 +9,6 @@
   "static/media/logo.svg": "/online-jukebox/static/media/logo.5d5d9eef.svg",
   "static/css/main.d12efa41.chunk.css.map": "/online-jukebox/static/css/main.d12efa41.chunk.css.map",
   "index.html": "/online-jukebox/index.html",
-  "precache-manifest.6611cbfbb412c20c50cd1ba886c09b5f.js": "/online-jukebox/precache-manifest.6611cbfbb412c20c50cd1ba886c09b5f.js",
+  "precache-manifest.6a3c173944096303d95f677c96f1bbcb.js": "/online-jukebox/precache-manifest.6a3c173944096303d95f677c96f1bbcb.js",
   "service-worker.js": "/online-jukebox/service-worker.js"
 }

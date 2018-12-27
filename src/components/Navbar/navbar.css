@@ -2,7 +2,7 @@
 
 .navbar {
     border-radius: 0;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #a59c9c;
     margin-bottom: 0; 
 }
 
@@ -19,4 +19,14 @@
 
 #Users-Nav-Dropdown {
     color: white;
+}
+
+.User-Icon { 
+    padding: 0.4rem;
+    border: 1.5px solid;
+    border-radius: 1.5rem;
+}
+
+.Username-List-Item {
+    padding-left: 1rem;
 }

@@ -8,12 +8,18 @@ const NoUsersItem = () => (
 );
 
 const UserIcon = () => (
-    <i class="fas fa-user"></i>
+    <i className="User-Icon fas fa-user"></i>
 );
 
-const NavigationBarView = ({users}) => {
+const NavigationBarView = ({users, username}) => {
     const NavBarDropdownItems = users.map((user,index) => (
-        <MenuItem><UserIcon/> {user.username}</MenuItem>
+        <MenuItem>
+            <UserIcon/>
+            <span className="Username-List-Item">
+                {user.username}
+                { username === user.username && (' (You)') }
+            </span>
+        </MenuItem>
     ));
     
     return (
@@ -37,6 +43,7 @@ const NavigationBarView = ({users}) => {
 
 const mapStateToProps = state => {
     return {
+        username: state.user.username,
         users: state.lobby.users
     }
 };

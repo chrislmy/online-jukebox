@@ -27,7 +27,11 @@ class SearchBar extends React.Component {
             results: []
         }
         this.handleInputChange = this.handleInputChange.bind(this);
-      }
+    }
+
+    componentDidMount(){
+        window.focus();
+    }
 
     formatVideos = (videos) => {
         let formattedVideos = [];

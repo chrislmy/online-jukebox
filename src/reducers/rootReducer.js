@@ -8,6 +8,8 @@ const video = (state = initialState.initialVideo, action) => {
             return { ...state, nowPlaying: action.data };
         case types.UPDATE_CURRENT_VIDEO_ID:
             return { ...state, videoId: action.data };
+        case types.UPDATE_SUGGESTED_USER:
+            return { ...state, suggestedUser: action.data };
         default:
             return state;
     }

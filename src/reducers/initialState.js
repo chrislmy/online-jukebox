@@ -1,4 +1,5 @@
 const initialVideo = {
+    suggestedUser: '',
     nowPlaying: '',
     videoId: ''
 }

@@ -1,9 +1,23 @@
 import React from 'react';
 import Youtube from 'react-youtube';
+import { Button } from 'react-bootstrap/lib';
 import { connect } from 'react-redux';
 import config from '../../config';
 import videoQueueActions from '../../actions/actionCreators/video-queue-actions';
 import './youtubePlayer.css';
+
+const VideoBanner = ({suggestedUser}) => (
+    <h3 className="Video-Banner-Title">
+        Suggested by: <span className="Suggested-User" >{suggestedUser}</span>
+        <Button 
+            className="Skip-Video-Button"
+            bsStyle="primary"
+            onClick={ () => videoQueueActions.updateQueue() }
+        >
+            Skip <i className="Skip-Icon fas fa-forward"></i>
+        </Button>
+    </h3>
+);
 
 class YoutubePlayerView extends React.Component {
     constructor(props) {
@@ -14,7 +28,7 @@ class YoutubePlayerView extends React.Component {
     }
 
     render() {
-        const { currentVideoId } = this.props
+        const { currentVideoId, suggestedUser } = this.props
 
         const playerClassName = config.environment.debug ? 'Player-Container-Debug' : 'Player-Container';
         const debugPlayerVars = { autoplay: 1 };
@@ -40,6 +54,7 @@ class YoutubePlayerView extends React.Component {
                     onReady={this._onReady}
                     onStateChange={this._onStateChange}
                 />
+                { suggestedUser !== '' && <VideoBanner suggestedUser={suggestedUser}/> }
             </div>
         )
     }
@@ -64,7 +79,8 @@ class YoutubePlayerView extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        currentVideoId: state.video.videoId
+        currentVideoId: state.video.videoId,
+        suggestedUser: state.video.suggestedUser
     }
 }
 

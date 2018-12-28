@@ -1,8 +1,12 @@
 import socketActions from '../socketActions/socket-actions';
 import types from '../../reducers/actionTypes';
+import store from '../../store/index';
 
 const addVideoToQueue = (videoId, videoTitle) => {
+    const state = store.getState();
+    const suggestedUser = state.user.username;
     const video = {
+        suggestedUser,
         videoId,
         videoTitle
     }
@@ -13,7 +17,8 @@ const getHeadVideoPlaylist = (playlist) => {
     // Catches case when playlist array is empty
     const nullVideo = {
         videoTitle: '',
-        videoId: ''
+        videoId: '',
+        suggestedUser: ''
     };
     const head = playlist && playlist[0] || nullVideo;
     return head;
@@ -34,6 +39,11 @@ const updateCurrentVideoId = (videoId) => ({
     data: videoId
 })
 
+const updateSuggestedUser = (suggestedUser) => ({
+    type: types.UPDATE_SUGGESTED_USER,
+    data: suggestedUser
+})
+
 const updatePlaylist = (playlist) => ({
     type: types.UPDATE_PLAYLIST,
     data: playlist
@@ -43,6 +53,7 @@ export default {
     addVideoToQueue,
     updateCurrentVideoTitle,
     updateCurrentVideoId,
+    updateSuggestedUser,
     updatePlaylist,
     getHeadVideoPlaylist,
     updateQueue

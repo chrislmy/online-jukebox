@@ -36,10 +36,12 @@ const setupPlaylistConnection = () => {
     socket.emit(socketMessages.FETCH_PLAYLIST);
     socket.on(socketMessages.UPDATE_PLAYLIST, (data) => {
         const playlist = data.videos;
-        const { videoId, videoTitle } = videoQueueActions.getHeadVideoPlaylist(playlist);
+        const { videoId, videoTitle, suggestedUser } = videoQueueActions.getHeadVideoPlaylist(playlist);
+        console.log(suggestedUser);
         store.dispatch(videoQueueActions.updatePlaylist(playlist));
         store.dispatch(videoQueueActions.updateCurrentVideoTitle(videoTitle));
         store.dispatch(videoQueueActions.updateCurrentVideoId(videoId));
+        store.dispatch(videoQueueActions.updateSuggestedUser(suggestedUser));
     });
 }
 

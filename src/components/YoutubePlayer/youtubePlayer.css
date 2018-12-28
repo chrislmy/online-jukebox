@@ -16,3 +16,20 @@
     background: rgb(0, 0, 0, 0.7);
     border-radius: 1.2rem 1.2rem 1rem 1rem;
 }
+
+.Video-Banner-Title {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.Suggested-User {
+    color: #00e9de;
+}
+
+.Skip-Video-Button {
+    margin-left: 2rem;
+}
+
+.Skip-Icon {
+    margin-left: 0.2rem;
+}

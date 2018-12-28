@@ -17,6 +17,7 @@ class VideoPanel extends React.Component {
         const etag = video.etag;
         const title = video.snippet.title;
         const thumbnailUrl = video.snippet.thumbnails.high.url;
+        
         return (
             <Col key={etag} sm={12} md={6}>
                 <li className="Suggestion-Container" key={etag}>

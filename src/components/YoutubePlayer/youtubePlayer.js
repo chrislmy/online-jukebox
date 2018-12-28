@@ -30,7 +30,7 @@ class YoutubePlayerView extends React.Component {
     render() {
         const { currentVideoId, suggestedUser } = this.props
 
-        const playerClassName = config.environment.debug ? 'Player-Container-Debug' : 'Player-Container';
+        const playerClassName = config.environment.debug ? 'Youtube-Player-Debug' : 'Youtube-Player';
         const debugPlayerVars = { autoplay: 1 };
         const defaultPlayerVars = {
             autoplay: 1,
@@ -47,8 +47,9 @@ class YoutubePlayerView extends React.Component {
         }
 
         return (
-            <div className={playerClassName}>
+            <div className="Youtube-Player-Wrapper">
                 <Youtube
+                    className= {playerClassName}
                     videoId={currentVideoId}
                     opts={opts}
                     onReady={this._onReady}

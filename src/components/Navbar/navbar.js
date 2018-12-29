@@ -13,7 +13,7 @@ const UserIcon = () => (
 
 const NavigationBarView = ({users, username}) => {
     const NavBarDropdownItems = users.map((user,index) => (
-        <MenuItem>
+        <MenuItem key={index}>
             <UserIcon/>
             <span className="Username-List-Item">
                 {user.username}

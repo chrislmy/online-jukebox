@@ -27,10 +27,16 @@ class SearchBar extends React.Component {
             results: []
         }
         this.handleInputChange = this.handleInputChange.bind(this);
+        this.submitForm = this.submitForm.bind(this);
     }
 
-    componentDidMount(){
+    componentDidMount() {
         window.focus();
+    }
+
+    submitForm (event) {
+        // Prevent page from being reloaded and restrict to live search
+        event.preventDefault();
     }
 
     formatVideos = (videos) => {
@@ -69,8 +75,8 @@ class SearchBar extends React.Component {
 
     render() {
         return (
-            <form>
-                <FormGroup controlId="formBasicText">
+            <form onSubmit={this.submitForm}>
+                <FormGroup  controlId="formBasicText">
                     <FormControl
                         className="Search-Bar"
                         type="text"

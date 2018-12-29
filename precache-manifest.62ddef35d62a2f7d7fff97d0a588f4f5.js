@@ -8,19 +8,19 @@ self.__precacheManifest = [
     "url": "/online-jukebox/static/js/runtime~main.42659c6e.js"
   },
   {
-    "revision": "cb0b82bb4be8d2f6df9e",
-    "url": "/online-jukebox/static/js/main.cb0b82bb.chunk.js"
+    "revision": "2d2d7d33561291121533",
+    "url": "/online-jukebox/static/js/main.2d2d7d33.chunk.js"
   },
   {
-    "revision": "f651c6e236098187dede",
-    "url": "/online-jukebox/static/js/1.f651c6e2.chunk.js"
+    "revision": "14c8c6788e1e60419029",
+    "url": "/online-jukebox/static/js/1.14c8c678.chunk.js"
   },
   {
-    "revision": "cb0b82bb4be8d2f6df9e",
+    "revision": "2d2d7d33561291121533",
     "url": "/online-jukebox/static/css/main.1321bb4f.chunk.css"
   },
   {
-    "revision": "cd3fac1c8f1d959b7fd5bc0f22efcb0c",
+    "revision": "0dcb821fec7dbb8fbc80e71fd3872b0d",
     "url": "/online-jukebox/index.html"
   }
 ];

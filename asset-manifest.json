@@ -1,14 +1,14 @@
 {
   "main.css": "/online-jukebox/static/css/main.1321bb4f.chunk.css",
-  "main.js": "/online-jukebox/static/js/main.cb0b82bb.chunk.js",
-  "main.js.map": "/online-jukebox/static/js/main.cb0b82bb.chunk.js.map",
-  "static/js/1.f651c6e2.chunk.js": "/online-jukebox/static/js/1.f651c6e2.chunk.js",
-  "static/js/1.f651c6e2.chunk.js.map": "/online-jukebox/static/js/1.f651c6e2.chunk.js.map",
+  "main.js": "/online-jukebox/static/js/main.2d2d7d33.chunk.js",
+  "main.js.map": "/online-jukebox/static/js/main.2d2d7d33.chunk.js.map",
+  "static/js/1.14c8c678.chunk.js": "/online-jukebox/static/js/1.14c8c678.chunk.js",
+  "static/js/1.14c8c678.chunk.js.map": "/online-jukebox/static/js/1.14c8c678.chunk.js.map",
   "runtime~main.js": "/online-jukebox/static/js/runtime~main.42659c6e.js",
   "runtime~main.js.map": "/online-jukebox/static/js/runtime~main.42659c6e.js.map",
   "static/media/logo.svg": "/online-jukebox/static/media/logo.5d5d9eef.svg",
   "static/css/main.1321bb4f.chunk.css.map": "/online-jukebox/static/css/main.1321bb4f.chunk.css.map",
   "index.html": "/online-jukebox/index.html",
-  "precache-manifest.fd9b5d984c373bf72eab0aff295da05f.js": "/online-jukebox/precache-manifest.fd9b5d984c373bf72eab0aff295da05f.js",
+  "precache-manifest.62ddef35d62a2f7d7fff97d0a588f4f5.js": "/online-jukebox/precache-manifest.62ddef35d62a2f7d7fff97d0a588f4f5.js",
   "service-worker.js": "/online-jukebox/service-worker.js"
 }

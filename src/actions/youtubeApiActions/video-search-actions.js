@@ -11,7 +11,6 @@ const getVideos = (query) => new Promise((resolve, reject) => {
             if( (videos.length % 2) !== 0 ) {
                 videos.splice(-1,1);
             }
-            console.log(videos);
             resolve(videos);
         })
         .catch((error) => {

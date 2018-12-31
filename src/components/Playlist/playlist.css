@@ -1,14 +1,82 @@
-@media only screen and (min-width: 1000px) {
-    .Playlist-Header {
-        margin-left: 3.8rem;
-    }
+.Playlist-Section {
+    padding: 1rem;
+    background: #222222;
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.Playlist-Header {
+    color: white;
+    text-align: center;
+    margin-top: 0.5rem;
 }
 
 .Video-Playlist {
     list-style: none;
+    padding: 0;
+    padding-bottom: 0;
+    height: 26rem;
+    overflow: auto;
+    min-width: 40rem;
 }
 
-.Playlist-Item:first-child {
+/* Prettier scrollbar, courtesy of: https://codepen.io/devstreak/pen/dMYgeO */
+.Video-Playlist::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.Video-Playlist::-webkit-scrollbar {
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+.Video-Playlist::-webkit-scrollbar-thumb {
+	background-color: #000000;
+}
+
+.Music-Icon {
+    margin-right: 0.5rem; 
+}
+
+.Playlist-Item-Wrapper:first-child {
+    color: #00e9de;
+    font-weight: 500;
+}
+
+.Playlist-Item-Wrapper {
     color: white;
-    font-weight: bold;
+}
+
+.Playlist-Item {
+    padding: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.Playlist-Item:hover {
+    background: rgb(0, 0, 0, 0.7);
+}
+
+.Seperator {
+    margin: 0;
+    background: #a59c9c;
+}
+
+.Empty-Video-Background {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    color: white;
+    width: 40rem;
+}
+
+.No-Video-Text {
+    margin: 0;
+    font-size: 1.6rem;
+}
+
+.Pause-Icon {
+    font-size: 8.5rem;
+    padding-bottom: 1.5rem;
+    padding-top: 3rem;
 }

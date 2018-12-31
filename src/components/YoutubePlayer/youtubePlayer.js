@@ -7,8 +7,8 @@ import videoQueueActions from '../../actions/actionCreators/video-queue-actions'
 import './youtubePlayer.css';
 
 const VideoBanner = ({suggestedUser}) => (
-    <h3 className="Video-Banner-Title">
-        Suggested by: <span className="Suggested-User" >{suggestedUser}</span>
+    <h4 className="Video-Banner-Title">
+        Added by : <span className="Suggested-User" >{suggestedUser}</span>
         <Button 
             className="Skip-Video-Button"
             bsStyle="primary"
@@ -16,7 +16,7 @@ const VideoBanner = ({suggestedUser}) => (
         >
             Skip <i className="Skip-Icon fas fa-forward"></i>
         </Button>
-    </h3>
+    </h4>
 );
 
 class YoutubePlayerView extends React.Component {
@@ -41,8 +41,8 @@ class YoutubePlayerView extends React.Component {
         const playerVars = config.environment.debug ? debugPlayerVars : defaultPlayerVars;
 
         const opts = {
-            height: '300',
-            width: '500',
+            height: '250',
+            width: '420',
             playerVars
         }
 

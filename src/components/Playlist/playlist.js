@@ -2,18 +2,29 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './playlist.css';
 
+const EmptyPlaylistView = () => (
+    <div className="Empty-Video-Background">
+        <i class="Pause-Icon far fa-pause-circle"></i>
+        <h4 className="No-Video-Text">Currently no videos on the queue</h4>
+    </div>
+);
+
 const PlaylistView = ({playlist}) => {
     const listItems = playlist.map((video,index) => (
-        <li className="Playlist-Item" key={index}>
-            {video.videoTitle}
-        </li>
+        <div className="Playlist-Item-Wrapper">
+            <li className="Playlist-Item" key={index}>
+                <i className="Music-Icon fas fa-music"></i>{video.videoTitle}
+            </li>
+            <hr className="Seperator"/>
+        </div>
     ))
 
     return (
-        <div>
-            <h3 className="Playlist-Header"><i className="fas fa-music"></i> Current Playlist</h3>
+        <div className="Playlist-Section">
+            <h4 className="Playlist-Header"> Current Playlist</h4>
+            <hr className="Seperator"/>
             <ul className="Video-Playlist">
-                {playlist.length > 0 ? (listItems) : ('Currently no videos on the queue :(')}
+                { playlist.length > 0 ? (listItems) : <EmptyPlaylistView/> }
             </ul>
         </div>
     )

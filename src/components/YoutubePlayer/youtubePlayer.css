@@ -3,7 +3,7 @@
     margin-left: 1.5rem;
     padding: 1.5rem;
     background: rgb(0, 0, 0, 0.7);
-    border-radius: 1.2rem 1.2rem 1rem 1rem;
+    border-radius: 0.8rem 0.8rem 0.8rem 0.8rem;
 }
 
 .Youtube-Player {
@@ -16,8 +16,10 @@
 }
 
 .Video-Banner-Title {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: white;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .Suggested-User {

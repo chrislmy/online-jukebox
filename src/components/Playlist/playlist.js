@@ -4,14 +4,14 @@ import './playlist.css';
 
 const EmptyPlaylistView = () => (
     <div className="Empty-Video-Background">
-        <i class="Pause-Icon far fa-pause-circle"></i>
+        <i className="Pause-Icon far fa-pause-circle"></i>
         <h4 className="No-Video-Text">Currently no videos on the queue</h4>
     </div>
 );
 
 const PlaylistView = ({playlist}) => {
     const listItems = playlist.map((video,index) => (
-        <div className="Playlist-Item-Wrapper">
+        <div key={index} className="Playlist-Item-Wrapper">
             <li className="Playlist-Item" key={index}>
                 <i className="Music-Icon fas fa-music"></i>{video.videoTitle}
             </li>

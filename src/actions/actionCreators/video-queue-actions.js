@@ -25,7 +25,9 @@ const getHeadVideoPlaylist = (playlist) => {
 };
 
 const updateQueue = () => {
-    socketActions.playNextVideo();
+    const state = store.getState();
+    const videoId = state.video.videoId;
+    socketActions.playNextVideo(videoId);
 }
 
 // Redux store actions

@@ -24,10 +24,11 @@ const getHeadVideoPlaylist = (playlist) => {
     return head;
 };
 
-const updateQueue = () => {
+// If defaultSkip is set to false then only the host will play the next video
+const updateQueue = (defaultSkip = true) => {
     const state = store.getState();
     const videoId = state.video.videoId;
-    socketActions.playNextVideo(videoId);
+    socketActions.playNextVideo(videoId, defaultSkip);
 }
 
 // Redux store actions

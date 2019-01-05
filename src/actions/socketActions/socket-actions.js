@@ -44,8 +44,8 @@ const setupPlaylistConnection = () => {
     });
 }
 
-const playNextVideo = (videoId) => {
-    socket.emit(socketMessages.PLAY_NEXT_VIDEO, videoId);
+const playNextVideo = (videoId, defaultSkip) => {
+    socket.emit(socketMessages.PLAY_NEXT_VIDEO, { videoId, defaultSkip });
 }
 
 const addToPlaylist = (video) => {

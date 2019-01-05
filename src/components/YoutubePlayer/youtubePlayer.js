@@ -12,7 +12,7 @@ const VideoBanner = ({suggestedUser, videoId}) => (
         <Button 
             className="Skip-Video-Button"
             bsStyle="primary"
-            onClick={ () => videoQueueActions.updateQueue(videoId) }
+            onClick={ () => videoQueueActions.updateQueue(true) }
         >
             Skip <i className="Skip-Icon fas fa-forward"></i>
         </Button>
@@ -72,9 +72,9 @@ class YoutubePlayerView extends React.Component {
 
         // Finished playing
         if(event.data === 0) {
-            videoQueueActions.updateQueue();
+            videoQueueActions.updateQueue(false);
         }
-        event.target.playVideo();
+        // event.target.playVideo();
     }
 }
 

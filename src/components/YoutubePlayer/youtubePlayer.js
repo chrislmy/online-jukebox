@@ -6,15 +6,25 @@ import config from '../../config';
 import videoQueueActions from '../../actions/actionCreators/video-queue-actions';
 import './youtubePlayer.css';
 
-const VideoBanner = ({suggestedUser, videoId}) => (
+const VideoBanner = ({suggestedUser, videoId, player}) => (
     <h4 className="Video-Banner-Title">
         Added by : <span className="Suggested-User" >{suggestedUser}</span>
         <Button 
             className="Skip-Video-Button"
             bsStyle="primary"
+            bsSize="small"
             onClick={ () => videoQueueActions.updateQueue(true) }
         >
             Skip <i className="Skip-Icon fas fa-forward"></i>
+        </Button>
+
+        <Button 
+            className="Skip-Video-Button"
+            bsStyle="primary"
+            bsSize="small"
+            onClick={ () => player.unMute() }
+        >
+           <i className="fas fa-volume-up"></i>
         </Button>
     </h4>
 );
@@ -22,9 +32,36 @@ const VideoBanner = ({suggestedUser, videoId}) => (
 class YoutubePlayerView extends React.Component {
     constructor(props) {
         super(props);
-    
-        this.onReady = this._onReady.bind(this);
-        this.onChangeVideo = this._onStateChange.bind(this);
+        
+        this.state = {
+            player: null
+        };
+
+        this._onReady = this._onReady.bind(this);
+        this._onChangeVideo = this._onStateChange.bind(this);
+    }
+
+    _onReady(event) {
+        // Mount player to component
+        this.setState({
+            player: event.target
+        });
+
+        event.target.mute();
+        event.target.playVideo();
+    }
+
+    _onStateChange(event) {
+        // Mounted
+        if(event.data === -1) {
+            // event.target.seekTo(50,true);
+        }
+
+        // Finished playing
+        if(event.data === 0) {
+            videoQueueActions.updateQueue(false);
+        }
+        // event.target.playVideo();
     }
 
     render() {
@@ -55,26 +92,12 @@ class YoutubePlayerView extends React.Component {
                     onReady={this._onReady}
                     onStateChange={this._onStateChange}
                 />
-                { suggestedUser !== '' && <VideoBanner suggestedUser={suggestedUser} videoId={currentVideoId}/> }
+                { suggestedUser !== '' 
+                    ? <VideoBanner suggestedUser={suggestedUser} videoId={currentVideoId} player={this.state.player}/>
+                    : <h4 className="Video-Banner-Title">Jukebox Currently Paused</h4>
+                }
             </div>
         )
-    }
-
-    _onReady(event) {
-        event.target.playVideo();
-    }
-
-    _onStateChange(event) {
-        // Mounted
-        if(event.data === -1) {
-            // event.target.seekTo(50,true);
-        }
-
-        // Finished playing
-        if(event.data === 0) {
-            videoQueueActions.updateQueue(false);
-        }
-        // event.target.playVideo();
     }
 }
 

@@ -5,7 +5,7 @@ import './header.css';
 
 const NothingPlayingHeader = () => (
     <span>
-        Nothing Playing, Party's Dead <i className="Tear-Icon far fa-sad-tear"></i>
+        Nothing Playing, Party's Dead
     </span>
 );
 

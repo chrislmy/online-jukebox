@@ -46,7 +46,7 @@ body {
     display: inline-flex;
   }
   .Current-Playlist {
-    padding-right: 3rem;
+    padding-right: 2rem;
     text-align: left;
   }
 }

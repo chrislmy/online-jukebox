@@ -3,7 +3,6 @@
     margin-left: 1.5rem;
     padding: 1.5rem;
     background: rgb(0, 0, 0, 0.7);
-    border-radius: 0.8rem 0.8rem 0.8rem 0.8rem;
 }
 
 .Youtube-Player {
@@ -20,6 +19,7 @@
     color: white;
     margin-top: 0;
     margin-bottom: 0;
+    font-family: 'Roboto', sans-serif;
 }
 
 .Suggested-User {

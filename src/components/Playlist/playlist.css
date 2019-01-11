@@ -1,7 +1,7 @@
 .Playlist-Section {
     padding: 1rem;
     background: #222222;
-    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+    font-family: 'Roboto', sans-serif;
 }
 
 .Playlist-Header {
@@ -14,9 +14,9 @@
     list-style: none;
     padding: 0;
     padding-bottom: 0;
-    height: 26rem;
+    height: 25rem;
     overflow: auto;
-    min-width: 40rem;
+    width: 45rem;
 }
 
 /* Prettier scrollbar, courtesy of: https://codepen.io/devstreak/pen/dMYgeO */
@@ -35,7 +35,7 @@
 }
 
 .Music-Icon {
-    margin-right: 0.5rem; 
+    margin-right: 0.8rem; 
 }
 
 .Playlist-Item-Wrapper:first-child {
@@ -51,6 +51,9 @@
     padding: 0.5rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .Playlist-Item:hover {
@@ -67,7 +70,8 @@
     display: table-cell;
     vertical-align: middle;
     color: white;
-    width: 40rem;
+    width: inherit;
+    height: inherit;
 }
 
 .No-Video-Text {
@@ -76,7 +80,6 @@
 }
 
 .Pause-Icon {
-    font-size: 8.5rem;
+    font-size: 5rem;
     padding-bottom: 1.5rem;
-    padding-top: 3rem;
 }

@@ -1,9 +1,12 @@
+.Search-Bar-Container {
+    margin: auto;
+    max-width: 120rem;
+}
+
 .Search-Bar {
-    width: 80%;
     height: 1.5rem;
     padding: 1.5rem;
-    border-radius: 0.5rem;
-    margin: auto;
+    border-radius: 0.3rem;
 }
 
 .Video-Suggestions {
@@ -13,13 +16,15 @@
 
 .Search-Video-Prompt-Container {
     color: white;
+    font-family: 'Roboto', sans-serif;
 }
 
 .Search-Video-Prompt-Suffix {
     color: #00e9de;
+    font-family: 'Roboto', sans-serif;
 }
 
 .Head-Phone-Icon {
     margin-top: 2rem;
-    font-size: 11rem;
+    font-size: 8.5rem;
 }

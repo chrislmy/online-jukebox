@@ -1,25 +1,24 @@
 .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-    height: 90px;
+    animation: App-logo-spin infinite 15s linear;
+    height: 4.5rem;
 }
 
 .App-header {
     background-color: #222;
-    height: 220px;
-    padding: 20px;
+    height: 15rem;
+    padding: 1.5rem;
+    padding-top: 2rem;
     color: white;
+    font-family: 'Roboto', sans-serif;
 }
 
 .App-title {
+    margin-top: 1.5rem;
     font-size: 1.5rem;
 }
 
 .Now-Playing-Icon {
     margin-right: 1.5rem;
-}
-
-.Tear-Icon {
-    margin-left: 1rem;
 }
 
 .Username-Field {

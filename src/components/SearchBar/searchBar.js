@@ -1,6 +1,5 @@
 import React from 'react';
-import FormGroup from 'react-bootstrap/lib/FormGroup';
-import FormControl from 'react-bootstrap/lib/FormControl';
+import { InputGroup, FormGroup, FormControl } from 'react-bootstrap/lib';
 import VideoSuggestions from '../VideoSuggestions/videoSuggestions';
 import videoSearchActions from '../../actions/youtubeApiActions/video-search-actions';
 import './searchBar.css';
@@ -14,8 +13,8 @@ const HeadPhoneIcon = () => (
 const VideoSearchPrompt = () => (
     <div className="Search-Video-Prompt-Container">
         <HeadPhoneIcon />
-        <h3 className="Search-Video-Prompt-Prefix"> Search for your favorite songs </h3>
-        <h4 className="Search-Video-Prompt-Suffix"> Add them to the playlist and get this party started! </h4>
+        <h4 className="Search-Video-Prompt-Prefix"> Search for your favorite songs </h4>
+        <h5 className="Search-Video-Prompt-Suffix"> Add them to the playlist and get this party started! </h5>
     </div>
 )
 
@@ -28,10 +27,6 @@ class SearchBar extends React.Component {
         }
         this.handleInputChange = this.handleInputChange.bind(this);
         this.submitForm = this.submitForm.bind(this);
-    }
-
-    componentDidMount() {
-        window.focus();
     }
 
     submitForm (event) {
@@ -76,14 +71,19 @@ class SearchBar extends React.Component {
     render() {
         return (
             <form onSubmit={this.submitForm}>
-                <FormGroup  controlId="formBasicText">
-                    <FormControl
-                        className="Search-Bar"
-                        type="text"
-                        value={this.state.query}
-                        placeholder="Start typing your query for videos ..."
-                        onChange={this.handleInputChange}
-                    />
+                <FormGroup className="Search-Bar-Container" controlId="formBasicText">
+                    <InputGroup>
+                        <InputGroup.Addon>
+                            <i className="fab fa-youtube-square"></i>
+                        </InputGroup.Addon>
+                        <FormControl
+                            className="Search-Bar"
+                            type="text"
+                            value={this.state.query}
+                            placeholder="Enter a song name from Youtube"
+                            onChange={this.handleInputChange}
+                        />
+                    </InputGroup>
                 </FormGroup>
                 <div className="Video-Suggestions">
                     { this.state.results.length > 0

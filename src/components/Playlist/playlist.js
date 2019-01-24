@@ -15,14 +15,14 @@ const PlaylistView = ({playlist}) => {
             <li className="Playlist-Item" key={index}>
                 <i className="Music-Icon fas fa-music"></i>{video.videoTitle}
             </li>
-            <hr className="Seperator"/>
+            <hr className="seperator"/>
         </div>
     ))
 
     return (
         <div className="Playlist-Section">
             <h4 className="Playlist-Header"> Current Playlist</h4>
-            <hr className="Seperator"/>
+            <hr className="seperator"/>
             <ul className="Video-Playlist">
                 { playlist.length > 0 ? (listItems) : <EmptyPlaylistView/> }
             </ul>

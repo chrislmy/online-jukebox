@@ -4,8 +4,6 @@ import VideoSuggestions from '../VideoSuggestions/videoSuggestions';
 import videoSearchActions from '../../actions/youtubeApiActions/video-search-actions';
 import './searchBar.css';
 
-const VIDEOS_PER_ROW = 2;
-
 const HeadPhoneIcon = () => (
     <i className="fas fa-headphones-alt Head-Phone-Icon"></i>
 );
@@ -32,66 +30,53 @@ class SearchBar extends React.Component {
     submitForm (event) {
         // Prevent page from being reloaded and restrict to live search
         event.preventDefault();
-    }
-
-    formatVideos = (videos) => {
-        let formattedVideos = [];
-        for(let i = 0; i <videos.length; i+=VIDEOS_PER_ROW) {
-            const row = [];
-            row.push(videos[i]);
-            row.push(videos[i+1]);
-            formattedVideos.push(row);
-        }
-        return formattedVideos;
+        this.getVideos();
     }
 
     getVideos = () => {
         videoSearchActions.getVideos(this.state.query)
             .then((videos) => {
+                // console.log(videos);
                 this.setState({
-                    results:this.formatVideos(videos)
+                    results: videos
                 })
             });
+        
     }
 
     handleInputChange = (event) => {
         this.setState({
             query: event.target.value    
-        }, () => {
-            if(this.state.query && this.state.query.length > 2){
-                this.getVideos()
-            }else if (!this.query){
-                this.setState({
-                    results: []
-                })
-            }
-        })
+        });
     }
 
     render() {
         return (
-            <form onSubmit={this.submitForm}>
-                <FormGroup className="Search-Bar-Container" controlId="formBasicText">
-                    <InputGroup>
-                        <InputGroup.Addon>
-                            <i className="fab fa-youtube-square"></i>
-                        </InputGroup.Addon>
-                        <FormControl
-                            className="Search-Bar"
-                            type="text"
-                            value={this.state.query}
-                            placeholder="Enter a song name from Youtube"
-                            onChange={this.handleInputChange}
-                        />
-                    </InputGroup>
-                </FormGroup>
-                <div className="Video-Suggestions">
+            <div className="video-search-section">
+                <form onSubmit={this.submitForm}>
+                    <FormGroup className="search-bar-wrapper" controlId="formBasicText">
+                        <InputGroup>
+                            <InputGroup.Addon>
+                                <i className="fab fa-youtube-square"></i>
+                            </InputGroup.Addon>
+                            <FormControl
+                                className="Search-Bar"
+                                type="text"
+                                value={this.state.query}
+                                placeholder="Enter a song name from Youtube"
+                                onChange={this.handleInputChange}
+                            />
+                        </InputGroup>
+                    </FormGroup>
+                    
+                </form>
+                <div className="video-suggestions">
                     { this.state.results.length > 0
                         ? <VideoSuggestions videos={this.state.results} />
                         : <VideoSearchPrompt />
                     }
                 </div>
-            </form>
+            </div>
         )
     }
 }

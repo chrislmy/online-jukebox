@@ -1,15 +1,65 @@
-.Suggestion-Container {
+.suggestion-list-item {
     list-style: none;
-    display: inline;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
 }
 
-.Suggestion-Thumbnail {
-    height: 45%;
-    width: 65%;
+.suggestion-thumbnail {
+    height: 12rem;
+    width: 17rem;
 }
 
-.Video-List {
+.suggestion-description {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    display: flex;
+    flex-direction: column; 
+    text-align: left;
+    width: 100%;
+}
+
+.suggestion-title {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.video-duration {
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+}
+
+.video-channel {
+    font-size: 1.4rem;
+    margin-top: 1.5rem;
+}
+
+.video-suggestion-seperator {
+    margin-top: 1.1rem;
+    margin-bottom: 1.1rem; 
+}
+
+.video-suggestion-list {
     padding: 0;
+    padding-right: 1rem;
+    height: 100rem;
+    overflow: auto;
+}
+
+.video-suggestion-list::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+.video-suggestion-list::-webkit-scrollbar {
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+.video-suggestion-list::-webkit-scrollbar-thumb {
+	background-color: #000000;
 }
 
 .Panel-Wrapper {
@@ -26,6 +76,19 @@
     font-weight: bold;
 }
 
-.Add-Video-Button {
-    margin-top: 1rem;
+.add-video-button {
+    margin-top: 0rem;
+}
+
+/* Icons */
+.stopwatch-icon {
+    margin-right: 1.3rem;
+}
+
+.music-icon {
+    margin-right: 1.2rem;
+}
+
+.youtube-icon {
+    margin-right: 1.3rem;
 }

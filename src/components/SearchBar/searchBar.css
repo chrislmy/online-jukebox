@@ -1,16 +1,21 @@
-.Search-Bar-Container {
+.video-search-section {
     margin: auto;
-    max-width: 120rem;
+    max-width: 105rem;
+}
+
+.search-bar-wrapper {
+    padding: 0.8rem;
 }
 
 .Search-Bar {
-    height: 1.5rem;
-    padding: 1.5rem;
+    height: 1.6rem;
+    padding: 1.6rem;
     border-radius: 0.3rem;
 }
 
-.Video-Suggestions {
+.video-suggestions {
     padding: 1rem;
+    padding-top: 0; 
     background: #222;
 }
 

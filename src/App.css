@@ -41,12 +41,18 @@ body {
   padding-top: 1.5rem;
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 800px) {
   .Player-View-Container {
     display: inline-flex;
   }
   .Current-Playlist {
     padding-right: 2rem;
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .Current-Playlist {
     text-align: left;
   }
 }

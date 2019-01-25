@@ -22,6 +22,28 @@
     font-family: 'Roboto', sans-serif;
 }
 
+@media only screen and (max-width: 800px) {
+    .Youtube-Player {
+        height: 0;
+        width: 0;
+    }
+    .Youtube-Player-Debug {
+        height: 0;
+        width: 0;
+    }
+
+    .Youtube-Player-Wrapper {
+        padding: 1.5rem;
+        margin-left: 0; 
+        background: rgb(0, 0, 0, 0.7);
+    }
+
+    .Video-Banner-Title {
+        font-size: 1.4rem;
+        margin-top: -2rem;
+    }
+}
+
 .Suggested-User {
     color: #00e9de;
 }

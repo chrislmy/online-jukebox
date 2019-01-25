@@ -5,14 +5,14 @@ import videoSearchActions from '../../actions/youtubeApiActions/video-search-act
 import './searchBar.css';
 
 const HeadPhoneIcon = () => (
-    <i className="fas fa-headphones-alt Head-Phone-Icon"></i>
+    <i className="fas fa-headphones-alt head-phone-icon"></i>
 );
 
 const VideoSearchPrompt = () => (
-    <div className="Search-Video-Prompt-Container">
+    <div className="search-video-prompt-container">
         <HeadPhoneIcon />
-        <h4 className="Search-Video-Prompt-Prefix"> Search for your favorite songs </h4>
-        <h5 className="Search-Video-Prompt-Suffix"> Add them to the playlist and get this party started! </h5>
+        <h4 className="search-video-prompt-prefix"> Search for your favorite songs </h4>
+        <h5 className="search-video-prompt-suffix"> Let's get this party started! </h5>
     </div>
 )
 
@@ -60,7 +60,7 @@ class SearchBar extends React.Component {
                                 <i className="fab fa-youtube-square"></i>
                             </InputGroup.Addon>
                             <FormControl
-                                className="Search-Bar"
+                                className="search-bar"
                                 type="text"
                                 value={this.state.query}
                                 placeholder="Enter a song name from Youtube"

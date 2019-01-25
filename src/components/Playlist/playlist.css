@@ -19,6 +19,14 @@
     width: 45rem;
 }
 
+.Empty-Video-Background {
+    text-align: center;
+    padding-top: 8rem;
+    color: white;
+    width: inherit;
+    height: inherit;
+}
+
 /* Prettier scrollbar, courtesy of: https://codepen.io/devstreak/pen/dMYgeO */
 .Video-Playlist::-webkit-scrollbar-track {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
@@ -65,15 +73,6 @@
     background: #a59c9c;
 }
 
-.Empty-Video-Background {
-    text-align: center;
-    display: table-cell;
-    vertical-align: middle;
-    color: white;
-    width: inherit;
-    height: inherit;
-}
-
 .No-Video-Text {
     margin: 0;
     font-size: 1.6rem;
@@ -82,4 +81,30 @@
 .Pause-Icon {
     font-size: 5rem;
     padding-bottom: 1.5rem;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .Video-Playlist {
+        width: inherit;
+        height: 22rem;
+    }
+
+    .Playlist-Header {
+        font-size: 1.5rem;
+        margin-top: 0;
+    }
+
+    .No-Video-Text {
+        font-size: 1.4rem;
+    }
+
+    .Pause-Icon {
+        font-size: 3.5rem;
+        padding-bottom: 1.5rem;
+    }
+    
+    .Playlist-Item {
+        font-size: 1.2rem;
+    }
 }

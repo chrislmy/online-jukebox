@@ -7,7 +7,7 @@
     padding: 0.8rem;
 }
 
-.Search-Bar {
+.search-bar {
     height: 1.6rem;
     padding: 1.6rem;
     border-radius: 0.3rem;
@@ -19,17 +19,39 @@
     background: #222;
 }
 
-.Search-Video-Prompt-Container {
+.search-video-prompt-container {
     color: white;
     font-family: 'Roboto', sans-serif;
 }
 
-.Search-Video-Prompt-Suffix {
+.search-video-prompt-suffix {
     color: #00e9de;
     font-family: 'Roboto', sans-serif;
 }
 
-.Head-Phone-Icon {
+.head-phone-icon {
     margin-top: 2rem;
     font-size: 8.5rem;
+}
+
+@media only screen and (max-width: 800px) {
+    .search-bar {
+        height: 1rem;
+        padding: 1.3rem;
+        border-radius: 0.2rem;
+    }
+
+    .head-phone-icon {
+        font-size: 4.5rem;
+        margin-top: 1.2rem; 
+    }
+    
+    .search-video-prompt-prefix, .search-video-prompt-suffix {
+        font-size: 1.5rem;
+    }
+
+    .video-search-section {
+        padding: 0.5rem;
+        padding-top: 0;
+    }
 }

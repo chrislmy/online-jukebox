@@ -9,15 +9,10 @@ const NothingPlayingHeader = () => (
     </span>
 );
 
-const DiscIcon = () => (
-    <i className="fas fa-compact-disc Now-Playing-Icon"></i>
-);
-
 const HeaderView = ({ nowPlayingTitle, username }) => (
     <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1 className="App-title">
-            <DiscIcon />
             { (nowPlayingTitle !== '') 
                 ? ('Now Playing : ' + nowPlayingTitle)
                 : <NothingPlayingHeader />

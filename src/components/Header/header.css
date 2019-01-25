@@ -17,10 +17,21 @@
     font-size: 1.5rem;
 }
 
-.Now-Playing-Icon {
-    margin-right: 1.5rem;
-}
-
 .Username-Field {
     color: #00e9de
+}
+
+@media only screen and (max-width: 800px) {
+    .App-logo {
+       display: none;
+    }
+
+    .App-title {
+        margin-top: 1rem;
+        font-size: 1.3rem;
+    }
+    
+    .App-header {
+        height: 10rem;
+    }
 }

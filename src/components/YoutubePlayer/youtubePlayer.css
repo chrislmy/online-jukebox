@@ -39,19 +39,7 @@
     }
 
     .Video-Banner-Title {
-        font-size: 1.4rem;
-        margin-top: -2rem;
+        font-size: 1.3rem;
+        margin-top: -2.2rem;
     }
-}
-
-.Suggested-User {
-    color: #00e9de;
-}
-
-.Skip-Video-Button {
-    margin-left: 2rem;
-}
-
-.Skip-Icon {
-    margin-left: 0.2rem;
 }

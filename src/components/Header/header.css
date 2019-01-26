@@ -12,12 +12,12 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.App-title {
+.song-heading, .welcome-heading {
     margin-top: 1.5rem;
     font-size: 1.5rem;
 }
 
-.Username-Field {
+.username-field {
     color: #00e9de
 }
 
@@ -26,12 +26,16 @@
        display: none;
     }
 
-    .App-title {
-        margin-top: 1rem;
+    .song-heading {
+        margin-top: 0;
         font-size: 1.3rem;
+    }
+
+    .welcome-heading {  
+        font-size: 1.2rem;
     }
     
     .App-header {
-        height: 10rem;
+        height: 9rem;
     }
 }

@@ -38,6 +38,8 @@ const lobby = (state = initialState.initialLobby, action) => {
     switch (action.type) {
         case types.UPDATE_USERS:
             return { ...state, users: action.data };
+        case types.UPDATE_VOLUME:
+            return { ...state, volume: action.data };
         default:
             return state;
     }

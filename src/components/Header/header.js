@@ -12,14 +12,14 @@ const NothingPlayingHeader = () => (
 const HeaderView = ({ nowPlayingTitle, username }) => (
     <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">
+        <h1 className="song-heading">
             { (nowPlayingTitle !== '') 
                 ? ('Now Playing : ' + nowPlayingTitle)
                 : <NothingPlayingHeader />
             }
         </h1>
-        <h3 className="App-title">
-            Welcome, <span className="Username-Field"> {username} </span>
+        <h3 className="welcome-heading">
+            Welcome, <span className="username-field"> {username} </span>
         </h3>
     </header>
 );

@@ -13,7 +13,8 @@ const initialUser = {
 }
 
 const initialLobby = {
-    users: []
+    users: [],
+    volume: 0,
 }
 
 export default {

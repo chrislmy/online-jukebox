@@ -42,7 +42,7 @@ const lobby = (state = initialState.initialLobby, action) => {
             return { ...state, volume: action.data };
         case types.LOADING_DATA:
             return { ...state, loadingData: action.data };
-        case types.DATA_LOADED_SUCCESS:
+        case types.DATA_LOADED_COMPLETE:
             return { ...state, loadingData: action.data };
         default:
             return state;

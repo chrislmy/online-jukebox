@@ -11,10 +11,18 @@ const dataLoading = (payload) => ({
     data: payload
 });
 
-const dataLoadingSuccess = (payload) => ({
-    type: types.DATA_LOADED_SUCCESS,
+const dataLoadingComplete = (payload) => ({
+    type: types.DATA_LOADED_COMPLETE,
     data: payload
 });
+
+const updateLoadingStatus = (status, payload) => {
+    if(status = 'calling') {
+        store.dispatch(dataLoading(payload));
+    }else if (status = 'complete') {
+        store.dispatch(dataLoadingComplete(payload));
+    }
+}
 
 const updateVolume = (volume) => {
     store.dispatch(updateVolumeAction(volume));
@@ -22,6 +30,7 @@ const updateVolume = (volume) => {
 
 export default {
     updateVolume,
+    updateLoadingStatus,
     dataLoading,
-    dataLoadingSuccess
+    dataLoadingComplete
 };

@@ -28,7 +28,7 @@ class SearchBar extends React.Component {
     }
 
     submitForm (event) {
-        // Prevent page from being reloaded and restrict to live search
+        // Prevent page from being reloaded
         event.preventDefault();
         this.getVideos();
     }
@@ -36,10 +36,12 @@ class SearchBar extends React.Component {
     getVideos = () => {
         videoSearchActions.getVideos(this.state.query)
             .then((videos) => {
-                // console.log(videos);
                 this.setState({
                     results: videos
                 })
+            })
+            .catch((error) => {
+                console.log(error);
             });
         
     }

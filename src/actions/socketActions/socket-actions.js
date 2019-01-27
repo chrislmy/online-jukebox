@@ -1,8 +1,8 @@
 import store from '../../store/index';
 import socketIOClient from 'socket.io-client';
 import socketMessages from './socket-messages';
-import videoQueueActions from '../actionCreators/video-queue-actions';
 import config from '../../config';
+import videoQueueActions from '../actionCreators/video-queue-actions';
 import userActions from '../actionCreators/user-actions';
 import lobbyActions from '../actionCreators/lobby-actions';
 
@@ -14,7 +14,7 @@ const setupUserConnection = () => {
     const sessionUsername = localStorage.getItem("username");
     const userForServer = sessionUsername ? {username: sessionUsername} : {username: ''}
     socket.emit(socketMessages.NEW_USER, userForServer);
-    store.dispatch(lobbyActions.dataLoading({type: 'CONNECTING_TO_LOBBY', isLoading: true}));
+    lobbyActions.updateLoadingStatus('calling', {type: 'CONNECTING_TO_LOBBY', isLoading: true});
     socket.on(socketMessages.USER_JOINED, (user) => {
         if(!sessionUsername) {
             store.dispatch(userActions.updateUsername(user.username));
@@ -43,7 +43,7 @@ const setupPlaylistConnection = () => {
         store.dispatch(videoQueueActions.updateCurrentVideoTitle(videoTitle));
         store.dispatch(videoQueueActions.updateCurrentVideoId(videoId));
         store.dispatch(videoQueueActions.updateSuggestedUser(suggestedUser));
-        store.dispatch(lobbyActions.dataLoadingSuccess({type: 'CONNECTING_TO_LOBBY', isLoading: false}));
+        lobbyActions.updateLoadingStatus('complete', {type: 'CONNECTING_TO_LOBBY', isLoading: false});
     });
 }
 

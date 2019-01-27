@@ -2,21 +2,27 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './loadingSpinner.css';
 
-const LoadingSpinnerView = ({isLoading}) => {
+const labelMap =  {
+    CONNECTING_TO_LOBBY: 'Plugging you in ...',
+    SEARCHING_YOUTUBE_VIDEO: 'Searching ...'
+};
+
+const LoadingSpinnerView = ({isLoading, type}) => {
     const spinnerClassName = isLoading ? 'full-page-spinner-container' : 'full-page-spinner-inactive';
-    console.log(spinnerClassName);
+
     return (
         <div className={spinnerClassName}>
             <div className="full-page-spinner"></div>
-            <div className="full-page-spinner-label"> Loading ... </div>
+            <div className="full-page-spinner-label"> {labelMap[type]} </div>
         </div>
     )
 };
 
 const mapStateToProps = state => {
-    const { isLoading } = state.lobby.loadingData;
+    const { isLoading, type } = state.lobby.loadingData;
     return {
-        isLoading
+        isLoading,
+        type
     }
 }
 

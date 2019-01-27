@@ -15,19 +15,17 @@ class App extends Component {
 
     render() {
         return (
-            <div>
+            <div className="App">
                 <LoadingSpinner />
-                <div className="App">
-                    <NavigationBar />
-                    <Header />
-                    <div className="Main-Container">
-                        <div className="Player-View-Container">
-                            <span className="Current-Playlist"><Playlist /></span>
-                            <span className="Youtube-Player-Container"><YoutubePlayer /></span>
-                        </div>
+                <NavigationBar />
+                <Header />
+                <div className="Main-Container">
+                    <div className="Player-View-Container">
+                        <span className="Current-Playlist"><Playlist /></span>
+                        <span className="Youtube-Player-Container"><YoutubePlayer /></span>
                     </div>
-                    <div className="Search-Bar-Wrapper"><SearchBar /></div>
                 </div>
+                <div className="Search-Bar-Wrapper"><SearchBar /></div>
             </div>
         );
     }

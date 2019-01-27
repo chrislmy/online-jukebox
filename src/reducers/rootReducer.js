@@ -40,6 +40,10 @@ const lobby = (state = initialState.initialLobby, action) => {
             return { ...state, users: action.data };
         case types.UPDATE_VOLUME:
             return { ...state, volume: action.data };
+        case types.LOADING_DATA:
+            return { ...state, loadingData: action.data };
+        case types.DATA_LOADED_SUCCESS:
+            return { ...state, loadingData: action.data };
         default:
             return state;
     }

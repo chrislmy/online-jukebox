@@ -6,6 +6,7 @@ import YoutubePlayer from './components/YoutubePlayer/youtubePlayer';
 import socketActions from './actions/socketActions/socket-actions';
 import Playlist from './components/Playlist/playlist';
 import NavigationBar from './components/Navbar/navbar';
+import LoadingSpinner from './components/LoadingSpinner/loadingSpinner'
 
 class App extends Component {
     componentDidMount() {
@@ -14,16 +15,19 @@ class App extends Component {
 
     render() {
         return (
-            <div className="App">
-                <NavigationBar />
-                <Header />
-                <div className="Main-Container">
-                    <div className="Player-View-Container">
-                        <span className="Current-Playlist"><Playlist /></span>
-                        <span className="Youtube-Player-Container"><YoutubePlayer /></span>
+            <div>
+                <LoadingSpinner />
+                <div className="App">
+                    <NavigationBar />
+                    <Header />
+                    <div className="Main-Container">
+                        <div className="Player-View-Container">
+                            <span className="Current-Playlist"><Playlist /></span>
+                            <span className="Youtube-Player-Container"><YoutubePlayer /></span>
+                        </div>
                     </div>
+                    <div className="Search-Bar-Wrapper"><SearchBar /></div>
                 </div>
-                <div className="Search-Bar-Wrapper"><SearchBar /></div>
             </div>
         );
     }

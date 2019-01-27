@@ -15,6 +15,10 @@ const initialUser = {
 const initialLobby = {
     users: [],
     volume: 0,
+    loadingData: {
+        type: '',
+        isLoading: false
+    }
 }
 
 export default {

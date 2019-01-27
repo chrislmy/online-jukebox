@@ -4,6 +4,7 @@ import socketMessages from './socket-messages';
 import videoQueueActions from '../actionCreators/video-queue-actions';
 import config from '../../config';
 import userActions from '../actionCreators/user-actions';
+import lobbyActions from '../actionCreators/lobby-actions';
 
 const socket = socketIOClient(config.keys.SERVER_BASE_ENDPOINT);
 
@@ -13,6 +14,7 @@ const setupUserConnection = () => {
     const sessionUsername = localStorage.getItem("username");
     const userForServer = sessionUsername ? {username: sessionUsername} : {username: ''}
     socket.emit(socketMessages.NEW_USER, userForServer);
+    store.dispatch(lobbyActions.dataLoading({type: 'CONNECTING_TO_LOBBY', isLoading: true}));
     socket.on(socketMessages.USER_JOINED, (user) => {
         if(!sessionUsername) {
             store.dispatch(userActions.updateUsername(user.username));
@@ -41,6 +43,7 @@ const setupPlaylistConnection = () => {
         store.dispatch(videoQueueActions.updateCurrentVideoTitle(videoTitle));
         store.dispatch(videoQueueActions.updateCurrentVideoId(videoId));
         store.dispatch(videoQueueActions.updateSuggestedUser(suggestedUser));
+        store.dispatch(lobbyActions.dataLoadingSuccess({type: 'CONNECTING_TO_LOBBY', isLoading: false}));
     });
 }
 

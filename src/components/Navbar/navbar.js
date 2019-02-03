@@ -8,14 +8,14 @@ const NoUsersItem = () => (
 );
 
 const UserIcon = () => (
-    <i className="User-Icon fas fa-user"></i>
+    <i className="user-icon fas fa-user"></i>
 );
 
 const NavigationBarView = ({users, username}) => {
     const NavBarDropdownItems = users.map((user,index) => (
         <MenuItem key={index}>
             <UserIcon/>
-            <span className="Username-List-Item">
+            <span className="username-list-item">
                 {user.username}
                 { username === user.username && (' (You)') }
             </span>

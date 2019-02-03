@@ -14,7 +14,7 @@
     list-style: none;
     padding: 0;
     padding-bottom: 0;
-    height: 25rem;
+    height: 26.5rem;
     overflow: auto;
     width: 45rem;
 }
@@ -41,6 +41,7 @@
 .Video-Playlist::-webkit-scrollbar-thumb {
 	background-color: #000000;
 }
+/* End pretty scrollbar */
 
 .Music-Icon {
     margin-right: 0.8rem; 
@@ -49,10 +50,12 @@
 .Playlist-Item-Wrapper:first-child {
     color: #00e9de;
     font-weight: 500;
+    border-left: 3px solid #00e9de;
 }
 
 .Playlist-Item-Wrapper {
     color: white;
+    border-left: 3px solid white;
 }
 
 .Playlist-Item {
@@ -87,7 +90,7 @@
 @media only screen and (max-width: 800px) {
     .Video-Playlist {
         width: inherit;
-        height: 22rem;
+        height: 21rem;
     }
 
     .Playlist-Header {

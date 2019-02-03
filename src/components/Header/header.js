@@ -14,7 +14,7 @@ const HeaderView = ({ nowPlayingTitle, username }) => (
         <img src={logo} className="App-logo" alt="logo" />
         <h1 className="song-heading">
             { (nowPlayingTitle !== '') 
-                ? ('Now Playing : ' + nowPlayingTitle)
+                ? (nowPlayingTitle)
                 : <NothingPlayingHeader />
             }
         </h1>

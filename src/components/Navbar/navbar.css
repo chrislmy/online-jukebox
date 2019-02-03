@@ -13,7 +13,7 @@
 }
 
 .navbar-inverse .navbar-brand {
-    font-weight: 550;
+    font-family: 'Roboto', sans-serif;
     color: #00e9de;
 }
 
@@ -21,12 +21,12 @@
     color: white;
 }
 
-.User-Icon { 
+.user-icon { 
     padding: 0.4rem;
     border: 1.5px solid;
     border-radius: 1.5rem;
 }
 
-.Username-List-Item {
+.username-list-item {
     padding-left: 1rem;
 }

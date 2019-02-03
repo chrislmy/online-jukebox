@@ -7,12 +7,22 @@ import './videoBanner.css';
 
 const volumes = [25, 50, 75, 100];
 
+const volumeControl = (volume, player) => {
+    lobbyActions.updateVolume(volume);
+    if(volume === 0){
+        player.mute();
+        return
+    }
+    player.setVolume(volume)
+    player.unMute();
+}
+
 const VolumeButton = ({volume, player}) => (
     <Button 
         className="volume-buttons"
         bsStyle="primary"
         bsSize="small"
-        onClick={ () => { player.setVolume(volume); lobbyActions.updateVolume(volume); } }
+        onClick={ () => { volumeControl(volume, player) } }
     >
         {volume}
     </Button>
@@ -43,7 +53,7 @@ const VideoBannerView = ({suggestedUser, videoId, player, volume}) => {
                         className="mute-button"
                         bsStyle="primary"
                         bsSize="small"
-                        onClick={ () => { player.unMute(); lobbyActions.updateVolume(50) } }
+                        onClick={ () => { volumeControl(50, player) } }
                     >
                         <i className="fas fa-volume-mute"></i>
                     </Button> :
@@ -51,7 +61,7 @@ const VideoBannerView = ({suggestedUser, videoId, player, volume}) => {
                         className="mute-button"
                         bsStyle="primary"
                         bsSize="small"
-                        onClick={ () => { player.mute(); lobbyActions.updateVolume(0) } }
+                        onClick={ () => { volumeControl(0, player) } }
                     >
                         <i className="fas fa-volume-up"></i>
                     </Button>

@@ -35,7 +35,7 @@ const VideoBannerView = ({suggestedUser, player, volume}) => {
 
     return (
         <div>
-            <h4 className="Video-Banner-Title">
+            <h4 className="video-banner-title">
                 Added by : <span className="suggested-user" >{suggestedUser}</span>
             </h4>
             <div className="control-buttons">

@@ -1,0 +1,22 @@
+.no-video-backdrop {
+    position: absolute;
+    width: 42rem;
+    height: 25rem;
+    background: rgba(255,255,255,0.85);
+    z-index: 1;
+}
+
+.no-video-backdrop-title {
+    margin: 0;
+    font-size: 1.8em;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #867f7f;
+}
+
+@media only screen and (max-width: 800px) {
+    .no-video-backdrop {
+        display: none;
+    }
+}

@@ -3,6 +3,7 @@ import Youtube from 'react-youtube';
 import { connect } from 'react-redux';
 import config from '../../config';
 import VideoBanner from './subComponents/videoBanner';
+import NoVideoBackdrop from './subComponents/noVideoBackdrop';
 import videoQueueActions from '../../actions/actionCreators/video-queue-actions';
 import './youtubePlayer.css';
 
@@ -56,6 +57,7 @@ class YoutubePlayerView extends React.Component {
 
         return (
             <div className="Youtube-Player-Wrapper">
+                { currentVideoId === '' && <NoVideoBackdrop /> }
                 <Youtube
                     className= {playerClassName}
                     videoId={currentVideoId}
@@ -65,7 +67,7 @@ class YoutubePlayerView extends React.Component {
                 />
                 { suggestedUser !== '' 
                     ? <VideoBanner suggestedUser={suggestedUser} videoId={currentVideoId} player={this.state.player}/>
-                    : <h4 className="Video-Banner-Title">Jukebox Currently Paused</h4>
+                    : <h4 className="jukebox-paused-title">Jukebox Currently Paused</h4>
                 }
             </div>
         )

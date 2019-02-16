@@ -3,13 +3,12 @@
 }
 
 .control-buttons {
-    margin-top: 1rem;
-
+    margin-top: 0.8rem;
 }
 
 .skip-video-button{
     margin-right: 1.5rem;
-    padding: 0.5rem;
+    padding: 0.3rem 0.5rem;
     background: none;
     border: solid #00e9de 1px;
     color: #00e9de;
@@ -25,6 +24,7 @@
     background: none;
     border: solid #00e9de 1px;
     color: #00e9de;
+    padding: 0.3rem 0.5rem;
 }
 
 .volume-buttons:hover, .volume-buttons:focus, .mute-button:hover, .mute-button:focus {

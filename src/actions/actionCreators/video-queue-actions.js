@@ -3,10 +3,7 @@ import types from '../../reducers/actionTypes';
 import store from '../../store/index';
 
 const addVideoToQueue = (videoId, videoTitle) => {
-    const state = store.getState();
-    const suggestedUser = state.user.username;
     const video = {
-        suggestedUser,
         videoId,
         videoTitle
     }

@@ -19,13 +19,13 @@ class App extends Component {
                 <LoadingSpinner />
                 <NavigationBar />
                 <Header />
-                <div className="Main-Container">
-                    <div className="Player-View-Container">
-                        <span className="Current-Playlist"><Playlist /></span>
-                        <span className="Youtube-Player-Container"><YoutubePlayer /></span>
+                <div className="upper-section-container">
+                    <div className="player-view-container">
+                        <span className="current-playlist-section"><Playlist /></span>
+                        <span className="youtube-player-container"><YoutubePlayer /></span>
                     </div>
                 </div>
-                <div className="Search-Bar-Wrapper"><SearchBar /></div>
+                <div className="lower-section-container"><SearchBar /></div>
             </div>
         );
     }

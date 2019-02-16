@@ -25,33 +25,33 @@ body {
   font-size: large;
 }
 
-.Main-Container {
+.upper-section-container {
   padding: 1.5rem;
   background: #00e9de;
 }
 
-.Current-Playlist {
+.current-playlist-section {
   text-align: center;
 }
 
-.Search-Bar-Wrapper {
+.lower-section-container {
   flex: 1 0 auto;
   background: #222;
   padding-top: 1.5rem;
 }
 
 @media only screen and (min-width: 800px) {
-  .Player-View-Container {
+  .player-view-container {
     display: inline-flex;
   }
-  .Current-Playlist {
+  .current-playlist-section {
     padding-right: 2rem;
     text-align: left;
   }
 }
 
 @media only screen and (max-width: 800px) {
-  .Current-Playlist {
+  .current-playlist-section {
     text-align: left;
   }
 }

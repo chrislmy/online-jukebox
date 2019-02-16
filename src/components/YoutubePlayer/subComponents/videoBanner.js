@@ -28,7 +28,7 @@ const VolumeButton = ({volume, player}) => (
     </Button>
 );
 
-const VideoBannerView = ({suggestedUser, videoId, player, volume}) => {
+const VideoBannerView = ({suggestedUser, player, volume}) => {
     const volumeButtons = volumes.map((volume,index) => (
         <VolumeButton player={player} volume={volume} key={index} />
     ))

@@ -1,38 +1,10 @@
 import React from 'react';
 import Youtube from 'react-youtube';
-import { Button } from 'react-bootstrap/lib';
 import { connect } from 'react-redux';
 import config from '../../config';
 import VideoBanner from './subComponents/videoBanner';
 import videoQueueActions from '../../actions/actionCreators/video-queue-actions';
 import './youtubePlayer.css';
-
-// const VideoBanner = ({suggestedUser, videoId, player}) => (
-//     <div>
-//         <h4 className="Video-Banner-Title">
-//             Added by : <span className="Suggested-User" >{suggestedUser}</span>
-//         </h4>
-//         <div className="control-buttons">
-//             <Button 
-//                 className="Skip-Video-Button"
-//                 bsStyle="primary"
-//                 bsSize="small"
-//                 onClick={ () => videoQueueActions.updateQueue(true) }
-//             >
-//                 Skip <i className="Skip-Icon fas fa-forward"></i>
-//             </Button>
-
-//             <Button 
-//                 className="Skip-Video-Button"
-//                 bsStyle="primary"
-//                 bsSize="small"
-//                 onClick={ () => player.unMute() }
-//             >
-//             <i className="fas fa-volume-up"></i>
-//             </Button>
-//         </div>
-//     </div>
-// );
 
 class YoutubePlayerView extends React.Component {
     constructor(props) {
@@ -57,16 +29,10 @@ class YoutubePlayerView extends React.Component {
     }
 
     _onStateChange(event) {
-        // Mounted
-        if(event.data === -1) {
-            // event.target.seekTo(50,true);
-        }
-
         // Finished playing
         if(event.data === 0) {
             videoQueueActions.updateQueue(false);
         }
-        // event.target.playVideo();
     }
 
     render() {

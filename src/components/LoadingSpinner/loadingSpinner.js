@@ -4,7 +4,8 @@ import './loadingSpinner.css';
 
 const labelMap =  {
     CONNECTING_TO_LOBBY: 'Plugging you in ...',
-    SEARCHING_YOUTUBE_VIDEO: 'Searching ...'
+    SEARCHING_YOUTUBE_VIDEO: 'Searching ...',
+    ADD_TO_PLAYLIST: 'Adding to Playlist ...'
 };
 
 const LoadingSpinnerView = ({isLoading, type}) => {

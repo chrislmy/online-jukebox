@@ -45,7 +45,7 @@ body {
     display: inline-flex;
   }
   .current-playlist-section {
-    padding-right: 2rem;
+    padding-right: 1rem;
     text-align: left;
   }
 }

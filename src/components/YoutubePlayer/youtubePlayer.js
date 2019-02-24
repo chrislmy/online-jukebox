@@ -67,7 +67,7 @@ class YoutubePlayerView extends React.Component {
                 />
                 { suggestedUser !== '' 
                     ? <VideoBanner suggestedUser={suggestedUser} videoId={currentVideoId} player={this.state.player}/>
-                    : <h4 className="jukebox-paused-title">Jukebox Currently Paused</h4>
+                    : <h4 className="jukebox-paused-title">There are currently no songs in the playlist</h4>
                 }
             </div>
         )

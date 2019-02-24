@@ -1,12 +1,14 @@
 import socketActions from '../socketActions/socket-actions';
 import types from '../../reducers/actionTypes';
 import store from '../../store/index';
+import lobbyActions from './lobby-actions';
 
 const addVideoToQueue = (videoId, videoTitle) => {
     const video = {
         videoId,
         videoTitle
     }
+    lobbyActions.updateLoadingStatus('calling', {type: 'ADD_TO_PLAYLIST', isLoading: true});
     socketActions.addToPlaylist(video);
 }
 

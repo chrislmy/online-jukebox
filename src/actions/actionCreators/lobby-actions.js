@@ -17,9 +17,9 @@ const dataLoadingComplete = (payload) => ({
 });
 
 const updateLoadingStatus = (status, payload) => {
-    if(status = 'calling') {
+    if(status === 'calling') {
         store.dispatch(dataLoading(payload));
-    }else if (status = 'complete') {
+    }else if (status === 'complete') {
         store.dispatch(dataLoadingComplete(payload));
     }
 }

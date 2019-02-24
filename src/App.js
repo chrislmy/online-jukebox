@@ -7,6 +7,7 @@ import socketActions from './actions/socketActions/socket-actions';
 import Playlist from './components/Playlist/playlist';
 import NavigationBar from './components/Navbar/navbar';
 import LoadingSpinner from './components/LoadingSpinner/loadingSpinner'
+import LobbyControls from './components/LobbyControls/lobbyControls';
 
 class App extends Component {
     componentDidMount() {
@@ -24,6 +25,7 @@ class App extends Component {
                         <span className="current-playlist-section"><Playlist /></span>
                         <span className="youtube-player-container"><YoutubePlayer /></span>
                     </div>
+                    {/* <LobbyControls/> */}
                 </div>
                 <div className="lower-section-container"><SearchBar /></div>
             </div>

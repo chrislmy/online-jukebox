@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Youtube from 'react-youtube';
 import { connect } from 'react-redux';
 import config from '../../config';
@@ -24,7 +25,7 @@ class YoutubePlayerView extends React.Component {
         this.setState({
             player: event.target
         });
-
+        window.player = event.target;
         event.target.mute();
         event.target.playVideo();
     }
@@ -74,12 +75,15 @@ class YoutubePlayerView extends React.Component {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        currentVideoId: state.video.videoId,
-        suggestedUser: state.video.suggestedUser
-    }
-}
+YoutubePlayerView.propTypes = {
+    currentVideoId: PropTypes.string,
+    suggestedUser: PropTypes.string
+};
+
+const mapStateToProps = state => ({
+    currentVideoId: state.video.videoId,
+    suggestedUser: state.video.suggestedUser
+});
 
 const YoutubePlayer = connect(mapStateToProps)(YoutubePlayerView);
 

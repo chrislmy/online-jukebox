@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap/lib';
 import { connect } from 'react-redux';
 import videoQueueActions from '../../../actions/actionCreators/video-queue-actions';
@@ -34,7 +35,7 @@ const VideoBannerView = ({suggestedUser, player, volume}) => {
     ))
 
     return (
-        <div>
+        <React.Fragment>
             <h4 className="video-banner-title">
                 Added by : <span className="suggested-user" >{suggestedUser}</span>
             </h4>
@@ -69,8 +70,14 @@ const VideoBannerView = ({suggestedUser, player, volume}) => {
 
                 {volumeButtons}
             </div>
-        </div>
+        </React.Fragment>
     )
+};
+
+VideoBannerView.propTypes = {
+    suggestedUser: PropTypes.string.isRequired,
+    player: PropTypes.object,
+    volume: PropTypes.number.isRequired
 };
 
 const mapStateToProps = state => ({

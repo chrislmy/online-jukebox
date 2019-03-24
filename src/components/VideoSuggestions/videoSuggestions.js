@@ -9,15 +9,15 @@ class VideoPanel extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick(videoId, videoTitle) {
-        videoQueueActions.addVideoToQueue(videoId, videoTitle);
+    handleClick(videoId, videoTitle, videoDuration) {
+        videoQueueActions.addVideoToQueue(videoId, videoTitle, videoDuration);
     }
 
     render() {
         const video = this.props.video;
 
         return (
-            <div>
+            <React.Fragment>
                 <li className="suggestion-list-item" key={video.videoId}>
                     <div><img alt="video-thumbnail" className="suggestion-thumbnail" src={video.thumbnail} /></div>
                     <div className="suggestion-description">
@@ -34,19 +34,19 @@ class VideoPanel extends React.Component {
                     <Button
                         className="add-video-button"
                         bsStyle="primary"
-                        onClick={ () => this.handleClick(video.videoId, video.title) }
+                        onClick={ () => this.handleClick(video.videoId, video.title, video.duration) }
                         >
                             <i className="fas fa-plus plus-icon"></i>
                     </Button>
                 </li>
                 <hr className="video-suggestion-seperator"/>
-            </div>
+            </React.Fragment>
         );
     }
 }
 
-const VideoSuggestions = (props) => {
-    const rows = props.videos.map(video => (
+const VideoSuggestions = ({ videos }) => {
+    const rows = videos.map(video => (
         <VideoPanel key={video.videoId} video={video} />
     ))
 

@@ -1,7 +1,8 @@
 const initialVideo = {
     suggestedUser: '',
-    nowPlaying: '',
-    videoId: ''
+    videoId: '',
+    videoTitle: '',
+    videoDuration: ''
 }
 
 const initialPlaylist = {

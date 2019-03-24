@@ -4,12 +4,8 @@ import types from './actionTypes';
 
 const video = (state = initialState.initialVideo, action) => {
     switch (action.type) {
-        case types.UPDATE_CURRENT_VIDEO_TITLE:
-            return { ...state, nowPlaying: action.data };
-        case types.UPDATE_CURRENT_VIDEO_ID:
-            return { ...state, videoId: action.data };
-        case types.UPDATE_SUGGESTED_USER:
-            return { ...state, suggestedUser: action.data };
+        case types.UPDATE_CURRENT_VIDEO:
+            return { ...state, ...action.data };
         default:
             return state;
     }

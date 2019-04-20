@@ -3,10 +3,11 @@ import types from '../../reducers/actionTypes';
 import store from '../../store/index';
 import lobbyActions from './lobby-actions';
 
-const addVideoToQueue = (videoId, videoTitle) => {
+const addVideoToQueue = (videoId, videoTitle, videoDuration) => {
     const video = {
         videoId,
-        videoTitle
+        videoTitle,
+        videoDuration
     }
     lobbyActions.updateLoadingStatus('calling', {type: 'ADD_TO_PLAYLIST', isLoading: true});
     socketActions.addToPlaylist(video);
@@ -17,9 +18,10 @@ const getHeadVideoPlaylist = (playlist) => {
     const nullVideo = {
         videoTitle: '',
         videoId: '',
-        suggestedUser: ''
+        suggestedUser: '',
+        videoDuration: ''
     };
-    const head = playlist && playlist[0] || nullVideo;
+    const head = playlist.length > 0 ? playlist[0] : nullVideo;
     return head;
 };
 
@@ -31,19 +33,9 @@ const updateQueue = (defaultSkip = true) => {
 }
 
 // Redux store actions
-const updateCurrentVideoTitle = (videoTitle) => ({
-    type: types.UPDATE_CURRENT_VIDEO_TITLE,
-    data: videoTitle
-})
-
-const updateCurrentVideoId = (videoId) => ({
-    type: types.UPDATE_CURRENT_VIDEO_ID,
-    data: videoId
-})
-
-const updateSuggestedUser = (suggestedUser) => ({
-    type: types.UPDATE_SUGGESTED_USER,
-    data: suggestedUser
+const updateCurrentVideo = (video) => ({
+    type: types.UPDATE_CURRENT_VIDEO,
+    data: video
 })
 
 const updatePlaylist = (playlist) => ({
@@ -53,9 +45,7 @@ const updatePlaylist = (playlist) => ({
 
 export default {
     addVideoToQueue,
-    updateCurrentVideoTitle,
-    updateCurrentVideoId,
-    updateSuggestedUser,
+    updateCurrentVideo,
     updatePlaylist,
     getHeadVideoPlaylist,
     updateQueue

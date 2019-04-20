@@ -4,7 +4,29 @@
 
 .control-buttons {
     margin-top: 0.8rem;
+    display: inline-flex;
 }
+
+/* Slider Override */
+.input-range {
+    width: 20rem;
+    margin-left: 1.3rem;
+    margin-top: 0.8rem;
+}
+
+.input-range__slider {
+    background: #00e9de;
+    border: 1px solid #00e9de;
+}
+
+.input-range__track--active {
+    background: #00e9de;
+}
+
+.input-range__label-container {
+    display: none;
+}
+/* End slider override */
 
 .skip-video-button{
     margin-right: 1.5rem;
@@ -34,7 +56,8 @@
 }
 
 .mute-button {
-    border-radius: 3px 0px 0px 3px;
+    border-radius: 15px;
+    font-size: 0.8em;
 }
 
 .volume-buttons {

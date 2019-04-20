@@ -47,19 +47,16 @@
     margin-right: 0.8rem; 
 }
 
-.playlist-item-wrapper:first-child {
+.playlist-item:first-child {
     color: #00e9de;
     background: rgb(0, 0, 0);
     font-weight: 500;
     border-left: 3px solid #00e9de;
 }
 
-.playlist-item-wrapper {
+.playlist-item {
     color: white;
     border-left: 3px solid white;
-}
-
-.playlist-item {
     padding: 0.5rem;
     padding-top: 1rem;
     padding-bottom: 1rem;

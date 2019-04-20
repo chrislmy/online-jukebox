@@ -1,10 +1,8 @@
 import axios from 'axios'
 import config from '../../config'
 import lobbyActions from '../actionCreators/lobby-actions';
-import store from '../../store/index';
 
 const getVideos = (query) => new Promise((resolve, reject) => {
-    let videos = [];
     lobbyActions.updateLoadingStatus('calling', {type: 'SEARCHING_YOUTUBE_VIDEO', isLoading: true});
     axios.get(config.keys.SERVER_BASE_ENDPOINT + '/videos?query=' + query)
         .then((response) => {

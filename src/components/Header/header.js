@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import logo from '../../logo.svg';
 import './header.css';
@@ -24,12 +25,15 @@ const HeaderView = ({ nowPlayingTitle, username }) => (
     </header>
 );
 
-const mapStateToProps = state => {
-    return {
-        nowPlayingTitle: state.video.nowPlaying,
-        username: state.user.username
-    }
-}
+HeaderView.propTypes = {
+    nowPlayingTitle: PropTypes.string,
+    suggestedUser: PropTypes.string
+};
+
+const mapStateToProps = state => ({
+    nowPlayingTitle: state.video.videoTitle,
+    username: state.user.username
+});
 
 const Header = connect(mapStateToProps)(HeaderView);
 

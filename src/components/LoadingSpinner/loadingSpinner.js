@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import './loadingSpinner.css';
 
@@ -26,6 +27,11 @@ const mapStateToProps = state => {
         type
     }
 }
+
+LoadingSpinnerView.propTypes = {
+    isLoading: PropTypes.bool.isRequired,
+    type: PropTypes.string.isRequired
+};
 
 const LoadingSpinner = connect(mapStateToProps)(LoadingSpinnerView);
 

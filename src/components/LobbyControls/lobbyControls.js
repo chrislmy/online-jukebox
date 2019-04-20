@@ -1,9 +1,8 @@
 import React from 'react';
 import { Button } from 'react-bootstrap/lib';
-import { connect } from 'react-redux';
 import './lobbyControls.css';
 
-const ThumbsUpButton = () => (
+const ThumbsUpSection = () => (
     <div className="thumbs-up-section">
         <Button
             className="thumbs-up-button"
@@ -15,7 +14,7 @@ const ThumbsUpButton = () => (
     </div>
 );
 
-const ThumbsDownButton = () => (
+const ThumbsDownSection = () => (
     <div className="thumbs-down-section">
         <Button
             className="thumbs-down-button"
@@ -29,8 +28,8 @@ const ThumbsDownButton = () => (
 
 const LobbyControls = () => (
     <div className="lobby-controls">
-        <ThumbsUpButton/>
-        <ThumbsDownButton/>
+        <ThumbsUpSection/>
+        <ThumbsDownSection/>
     </div>
 );
 

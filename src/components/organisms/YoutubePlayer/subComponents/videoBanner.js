@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap/lib';
 import { connect } from 'react-redux';
 import InputRange from 'react-input-range';
-import videoQueueActions from '../../../actions/actionCreators/video-queue-actions';
-import lobbyActions from '../../../actions/actionCreators/lobby-actions';
+import videoQueueActions from '../../../../actions/actionCreators/video-queue-actions';
+import lobbyActions from '../../../../actions/actionCreators/lobby-actions';
 import "react-input-range/lib/css/index.css";
 import './videoBanner.css';
 

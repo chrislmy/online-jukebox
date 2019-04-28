@@ -1,7 +1,7 @@
 import React from 'react';
 import { InputGroup, FormGroup, FormControl } from 'react-bootstrap/lib';
 import VideoSuggestions from '../VideoSuggestions/videoSuggestions';
-import videoSearchActions from '../../actions/youtubeApiActions/video-search-actions';
+import videoSearchActions from '../../../actions/youtubeApiActions/video-search-actions';
 import './searchBar.css';
 
 const HeadPhoneIcon = () => (

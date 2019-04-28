@@ -1,0 +1,53 @@
+.suggestion-description {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    display: flex;
+    flex-direction: column; 
+    text-align: left;
+    width: 100%;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+.suggestion-title {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.video-duration, .video-channel {
+    font-size: 1.3rem;
+    margin-top: 1.2rem;
+}
+
+/* Icons */
+.music-icon {
+    margin-right: 1.2rem;
+}
+
+.youtube-icon, .stopwatch-icon {
+    margin-right: 1.3rem;
+}
+
+@media only screen and (max-width: 800px) {
+    .stopwatch-icon, .youtube-icon, .music-icon {
+        display: none;
+    }
+
+    .suggestion-description {
+        padding-left: 0.8rem;
+        padding-right: 0;
+    }
+
+    .suggestion-title {
+        font-size: 1.2rem;
+    }
+
+    .video-duration, .video-channel {
+        font-size: 1.1rem;
+        margin-top: 0.4rem;
+    }
+
+}

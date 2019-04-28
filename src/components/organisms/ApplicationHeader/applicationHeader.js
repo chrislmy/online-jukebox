@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import logo from '../../logo.svg';
-import './header.css';
+import logo from '../../../logo.svg';
+import './applicationHeader.css';
 
 const NothingPlayingHeader = () => (
     <span>
@@ -10,7 +10,7 @@ const NothingPlayingHeader = () => (
     </span>
 );
 
-const HeaderView = ({ nowPlayingTitle, username }) => (
+const ApplicationHeaderView = ({ nowPlayingTitle, username }) => (
     <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h1 className="song-heading">
@@ -25,7 +25,7 @@ const HeaderView = ({ nowPlayingTitle, username }) => (
     </header>
 );
 
-HeaderView.propTypes = {
+ApplicationHeaderView.propTypes = {
     nowPlayingTitle: PropTypes.string,
     suggestedUser: PropTypes.string
 };
@@ -35,6 +35,6 @@ const mapStateToProps = state => ({
     username: state.user.username
 });
 
-const Header = connect(mapStateToProps)(HeaderView);
+const ApplicationHeader = connect(mapStateToProps)(ApplicationHeaderView);
 
-export default Header
+export default ApplicationHeader

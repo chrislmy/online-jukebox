@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Youtube from 'react-youtube';
 import { connect } from 'react-redux';
-import config from '../../config';
+import config from '../../../config';
 import VideoBanner from './subComponents/videoBanner';
 import NoVideoBackdrop from './subComponents/noVideoBackdrop';
-import videoQueueActions from '../../actions/actionCreators/video-queue-actions';
+import videoQueueActions from '../../../actions/actionCreators/video-queue-actions';
 import './youtubePlayer.css';
 
 class YoutubePlayerView extends React.Component {

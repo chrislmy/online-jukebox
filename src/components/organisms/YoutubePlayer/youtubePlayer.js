@@ -40,7 +40,7 @@ class YoutubePlayerView extends React.Component {
     render() {
         const { currentVideoId, suggestedUser } = this.props
 
-        const playerClassName = config.environment.debug ? 'Youtube-Player-Debug' : 'Youtube-Player';
+        const playerClassName = config.environment.debug ? 'youtube-player-debug' : 'youtube-player';
         const debugPlayerVars = { autoplay: 1 };
         const defaultPlayerVars = {
             autoplay: 1,
@@ -57,7 +57,7 @@ class YoutubePlayerView extends React.Component {
         }
 
         return (
-            <div className="Youtube-Player-Wrapper">
+            <div className="youtube-player-wrapper">
                 { currentVideoId === '' && <NoVideoBackdrop /> }
                 <Youtube
                     className= {playerClassName}

@@ -10,6 +10,7 @@ class VideoProgressBar extends React.Component {
         this.state = {
             currentProgress: 0
         };
+        this.frameRate = 500;
         this.updateProgress = () => {
             const { videoDuration } = this.props;
             let currentProgress = 0;
@@ -25,14 +26,14 @@ class VideoProgressBar extends React.Component {
     }
 
     componentDidMount() {
-        this.interval = setInterval(this.updateProgress, 500);
+        this.interval = setInterval(this.updateProgress, this.frameRate);
     }
 
     componentDidUpdate(previousProps) {
         const { videoDuration } = this.props;
         if(videoDuration !== previousProps.videoDuration){
             clearInterval(this.interval);
-            this.interval = setInterval(this.updateProgress, 500);
+            this.interval = setInterval(this.updateProgress, this.frameRate);
         }
     }
 
@@ -45,13 +46,13 @@ class VideoProgressBar extends React.Component {
             <ProgressBar now={this.state.currentProgress} />
         )
     }
-}
+};
 
 const VideoProgressBarWrapper = ({videoDuration}) => (
     <React.Fragment>
         { videoDuration !== 0 && <VideoProgressBar videoDuration={videoDuration} /> }
     </React.Fragment>
-)
+);
 
 VideoProgressBar.propTypes = {
     videoDuration: PropTypes.number.isRequired

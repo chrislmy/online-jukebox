@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap/lib';
 import { connect } from 'react-redux';
@@ -8,18 +8,8 @@ import lobbyActions from '../../../../actions/actionCreators/lobby-actions';
 import "react-input-range/lib/css/index.css";
 import './videoBanner.css';
 
-const volumeControl = (volume, player) => {
-    lobbyActions.updateVolume(volume);
-    if(volume === 0){
-        player.mute();
-        return
-    }
-    player.setVolume(volume)
-    player.unMute();
-}
-
-const VideoBannerView = ({suggestedUser, player, volume}) => (
-    <React.Fragment>
+const VideoBannerView = ({suggestedUser, player, volume, updateVolume}) => (
+    <Fragment>
         <h4 className="video-banner-title">
             Added by : <span className="suggested-user" >{suggestedUser}</span>
         </h4>
@@ -38,7 +28,7 @@ const VideoBannerView = ({suggestedUser, player, volume}) => (
                     className="mute-button"
                     bsStyle="primary"
                     bsSize="small"
-                    onClick={ () => { volumeControl(50, player) } }
+                    onClick={ () => { updateVolume(50, player) } }
                 >
                     <i className="fas fa-volume-mute"></i>
                 </Button> :
@@ -46,7 +36,7 @@ const VideoBannerView = ({suggestedUser, player, volume}) => (
                     className="mute-button"
                     bsStyle="primary"
                     bsSize="small"
-                    onClick={ () => { volumeControl(0, player) } }
+                    onClick={ () => { updateVolume(0, player) } }
                 >
                     <i className="fas fa-volume-up"></i>
                 </Button>
@@ -55,11 +45,10 @@ const VideoBannerView = ({suggestedUser, player, volume}) => (
                 maxValue={100}
                 minValue={0}
                 value={volume}
-                onChange={value => volumeControl(value, player)} 
+                onChange={value => updateVolume(value, player)} 
             />
         </div>
-        
-    </React.Fragment>
+    </Fragment>
 );
 
 VideoBannerView.propTypes = {
@@ -72,6 +61,12 @@ const mapStateToProps = state => ({
     volume: state.lobby.volume
 });
 
-const VideoBanner = connect(mapStateToProps)(VideoBannerView);
+const mapDispatchToProps = dispatch => ({
+    updateVolume: (volume, player) => { 
+        dispatch(lobbyActions.updateVolume(volume, player))
+    }
+});
+
+const VideoBanner = connect(mapStateToProps, mapDispatchToProps)(VideoBannerView);
 
 export default VideoBanner;

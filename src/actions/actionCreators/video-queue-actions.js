@@ -3,15 +3,16 @@ import types from '../../reducers/actionTypes';
 import store from '../../store/index';
 import lobbyActions from './lobby-actions';
 
-const addVideoToQueue = (videoId, videoTitle, videoDuration) => {
+const addVideoToQueue = (videoId, videoTitle, videoDuration) => (dispatch) => {
     const video = {
         videoId,
         videoTitle,
         videoDuration
-    }
-    lobbyActions.updateLoadingStatus('calling', {type: 'ADD_TO_PLAYLIST', isLoading: true});
+    };
+    const payload = { type: 'ADD_TO_PLAYLIST', isLoading: true };
+    dispatch(lobbyActions.dataLoading(payload));
     socketActions.addToPlaylist(video);
-}
+};
 
 const getHeadVideoPlaylist = (playlist) => {
     // Catches case when playlist array is empty
@@ -30,13 +31,13 @@ const updateQueue = (defaultSkip = true) => {
     const state = store.getState();
     const videoId = state.video.videoId;
     socketActions.playNextVideo(videoId, defaultSkip);
-}
+};
 
 // Redux store actions
 const updateCurrentVideo = (video) => ({
     type: types.UPDATE_CURRENT_VIDEO,
     data: video
-})
+});
 
 const updatePlaylist = (playlist) => ({
     type: types.UPDATE_PLAYLIST,
@@ -49,4 +50,4 @@ export default {
     updatePlaylist,
     getHeadVideoPlaylist,
     updateQueue
-}
+};

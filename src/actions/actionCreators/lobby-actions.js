@@ -19,14 +19,20 @@ const dataLoadingComplete = (payload) => ({
 const updateLoadingStatus = (status, payload) => {
     if(status === 'calling') {
         store.dispatch(dataLoading(payload));
-    }else if (status === 'complete') {
+    } else if (status === 'complete') {
         store.dispatch(dataLoadingComplete(payload));
     }
-}
+};
 
-const updateVolume = (volume) => {
-    store.dispatch(updateVolumeAction(volume));
-}
+const updateVolume = (volume, player) => (dispatch) => {
+    dispatch(updateVolumeAction(volume));
+    if(volume === 0){
+        player.mute();
+        return
+    }
+    player.setVolume(volume)
+    player.unMute();
+};
 
 export default {
     updateVolume,

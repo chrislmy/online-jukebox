@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './Application.css';
 import ApplicationHeader from './components/organisms/ApplicationHeader/applicationHeader';
 import SearchBar from './components/organisms/SearchBar/searchBar';
@@ -9,9 +10,9 @@ import NavigationBar from './components/organisms/Navbar/navbar';
 import LoadingSpinner from './components/molecules/LoadingSpinner/loadingSpinner';
 import LobbyControls from './components/organisms/LobbyControls/lobbyControls';
 
-class Application extends Component {
+class ApplicationView extends Component {
     componentDidMount() {
-        socketActions.initialSetup();
+        this.props.initLobby();
     }
 
     render() {
@@ -34,5 +35,11 @@ class Application extends Component {
         );
     }
 }
+
+const mapDispatchToProps = dispatch => ({
+    initLobby: ()  => { dispatch(socketActions.initialSetup()) }
+});
+
+const Application = connect(null, mapDispatchToProps)(ApplicationView)
 
 export default Application;

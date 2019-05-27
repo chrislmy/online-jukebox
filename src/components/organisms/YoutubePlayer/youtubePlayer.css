@@ -1,16 +1,16 @@
-.Youtube-Player-Wrapper {
+.youtube-player-wrapper {
     margin-bottom: 1.5rem;
     margin-left: 1.5rem;
     padding: 1.5rem;
     background: rgb(0, 0, 0, 0.7);
 }
 
-.Youtube-Player {
+.youtube-player {
     pointer-events: none;
     padding-bottom: 0.5rem;
 }
 
-.Youtube-Player-Debug {
+.youtube-player-debug {
     padding-bottom: 0.5rem;
 }
 
@@ -31,16 +31,17 @@
 }
 
 @media only screen and (max-width: 800px) {
-    .Youtube-Player {
+    .youtube-player {
         height: 0;
         width: 0;
     }
-    .Youtube-Player-Debug {
+    
+    .youtube-player-debug {
         height: 0;
         width: 0;
     }
 
-    .Youtube-Player-Wrapper {
+    .youtube-player-wrapper {
         padding: 1.5rem;
         margin-left: 0; 
         background: rgb(0, 0, 0, 0.7);

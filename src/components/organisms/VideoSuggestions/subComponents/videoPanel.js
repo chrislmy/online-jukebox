@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Button } from 'react-bootstrap/lib';
 import './videoPanel.css'
 import VideoSuggestionDescription from './videoSuggestionDescription';
-import videoQueueActions from '../../../../actions/actionCreators/video-queue-actions';
+import { addVideoToQueue } from '../../../../state/playlist/actions';
 
 const VideoPanelView = ({ video, addVideoToQueue }) => {
     const { videoId, title, duration } = video;
@@ -32,7 +32,7 @@ const VideoPanelView = ({ video, addVideoToQueue }) => {
 
 const mapDispatchToProps = dispatch => ({
     addVideoToQueue: (videoId, videoTitle, videoDuration) => { 
-        dispatch(videoQueueActions.addVideoToQueue(videoId, videoTitle, videoDuration))
+        dispatch(addVideoToQueue(videoId, videoTitle, videoDuration))
     }
 });
 

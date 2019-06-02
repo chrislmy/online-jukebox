@@ -1,7 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { InputGroup, FormGroup, FormControl } from 'react-bootstrap/lib';
 import VideoSuggestions from '../VideoSuggestions/videoSuggestions';
-import videoSearchActions from '../../../actions/youtubeApiActions/video-search-actions';
+import { searchVideos } from '../../../state/searchVideos/actions';
 import './searchBar.css';
 
 const HeadPhoneIcon = () => (
@@ -20,30 +21,9 @@ class SearchBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            query: '',
-            results: []
+            query: ''
         }
         this.handleInputChange = this.handleInputChange.bind(this);
-        this.submitForm = this.submitForm.bind(this);
-    }
-
-    submitForm (event) {
-        // Prevent page from being reloaded
-        event.preventDefault();
-        this.getVideos();
-    }
-
-    getVideos = () => {
-        videoSearchActions.getVideos(this.state.query)
-            .then((videos) => {
-                this.setState({
-                    results: videos
-                })
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-        
     }
 
     handleInputChange = (event) => {
@@ -53,9 +33,17 @@ class SearchBar extends React.Component {
     }
 
     render() {
+        const { query } = this.state;
+        const { videos } = this.props;
+
         return (
             <div className="video-search-section">
-                <form onSubmit={this.submitForm}>
+                <form 
+                    onSubmit={ (event) => {
+                        event.preventDefault();
+                        this.props.searchVideos(query)
+                    }}
+                >
                     <FormGroup className="search-bar-wrapper" controlId="formBasicText">
                         <InputGroup>
                             <InputGroup.Addon>
@@ -64,7 +52,7 @@ class SearchBar extends React.Component {
                             <FormControl
                                 className="search-bar"
                                 type="text"
-                                value={this.state.query}
+                                value={query}
                                 placeholder="Enter a song name from Youtube"
                                 onChange={this.handleInputChange}
                             />
@@ -73,8 +61,8 @@ class SearchBar extends React.Component {
                     
                 </form>
                 <div className="video-suggestions">
-                    { this.state.results.length > 0
-                        ? <VideoSuggestions videos={this.state.results} />
+                    { videos.length > 0
+                        ? <VideoSuggestions videos={videos} />
                         : <VideoSearchPrompt />
                     }
                 </div>
@@ -83,4 +71,14 @@ class SearchBar extends React.Component {
     }
 }
 
-export default SearchBar
+const mapStateToProps = ({ searchVideos: { videos } }) => ({
+    videos 
+});
+
+const mapDispatchToProps = dispatch => ({
+    searchVideos: (query) => { 
+        dispatch(searchVideos(query));
+    }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);

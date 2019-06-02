@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap/lib';
 import { connect } from 'react-redux';
 import InputRange from 'react-input-range';
-import videoQueueActions from '../../../../actions/actionCreators/video-queue-actions';
-import lobbyActions from '../../../../actions/actionCreators/lobby-actions';
 import "react-input-range/lib/css/index.css";
 import './videoBanner.css';
+import { updateQueue } from '../../../../state/playlist/actions';
+import { updateVolume } from '../../../../state/lobby/actions';
 
-const VideoBannerView = ({suggestedUser, player, volume, updateVolume}) => (
+const VideoBannerView = ({suggestedUser, player, videoId, volume, updateVolume}) => (
     <Fragment>
         <h4 className="video-banner-title">
             Added by : <span className="suggested-user" >{suggestedUser}</span>
@@ -18,7 +18,7 @@ const VideoBannerView = ({suggestedUser, player, volume, updateVolume}) => (
                 className="skip-video-button"
                 bsStyle="primary"
                 bsSize="small"
-                onClick={ () => videoQueueActions.updateQueue(true) }
+                onClick={ () => updateQueue(videoId, true) }
             >
                 Skip <i className="skip-icon fas fa-forward"></i>
             </Button>
@@ -63,7 +63,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     updateVolume: (volume, player) => { 
-        dispatch(lobbyActions.updateVolume(volume, player))
+        dispatch(updateVolume(volume, player));
     }
 });
 

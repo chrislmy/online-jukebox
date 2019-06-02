@@ -5,8 +5,8 @@ import { connect } from 'react-redux';
 import config from '../../../config';
 import VideoBanner from './subComponents/videoBanner';
 import NoVideoBackdrop from './subComponents/noVideoBackdrop';
-import videoQueueActions from '../../../actions/actionCreators/video-queue-actions';
 import './youtubePlayer.css';
+import { updateQueue } from '../../../state/playlist/actions';
 
 class YoutubePlayerView extends React.Component {
     constructor(props) {
@@ -15,9 +15,9 @@ class YoutubePlayerView extends React.Component {
         this.state = {
             player: null
         };
-
+        
         this._onReady = this._onReady.bind(this);
-        this._onChangeVideo = this._onStateChange.bind(this);
+        this._onStateChange = this._onStateChange.bind(this);
     }
 
     _onReady(event) {
@@ -33,7 +33,7 @@ class YoutubePlayerView extends React.Component {
     _onStateChange(event) {
         // Finished playing
         if(event.data === 0) {
-            videoQueueActions.updateQueue(false);
+            updateQueue(this.props.currentVideoId, false);
         }
     }
 

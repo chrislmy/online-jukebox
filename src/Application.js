@@ -4,11 +4,13 @@ import './Application.css';
 import ApplicationHeader from './components/organisms/ApplicationHeader/applicationHeader';
 import SearchBar from './components/organisms/SearchBar/searchBar';
 import YoutubePlayer from './components/organisms/YoutubePlayer/youtubePlayer';
-import socketActions from './actions/socketActions/socket-actions';
 import Playlist from './components/organisms/Playlist/playlist';
 import NavigationBar from './components/organisms/Navbar/navbar';
 import LoadingSpinner from './components/molecules/LoadingSpinner/loadingSpinner';
 import LobbyControls from './components/organisms/LobbyControls/lobbyControls';
+import { setupUserConnection } from './state/user/actions';
+import { getLobbyUsers } from './state/lobby/actions';
+import { setupPlaylistConnection } from './state/playlist/actions';
 
 class ApplicationView extends Component {
     componentDidMount() {
@@ -26,7 +28,7 @@ class ApplicationView extends Component {
                         <span className="current-playlist-section"><Playlist /></span>
                         <span className="youtube-player-container"><YoutubePlayer /></span>
                     </div>
-                    {/* <LobbyControls/> */}
+                    <LobbyControls/>
                 </div>
                 <div className="lower-section-container">
                     <SearchBar />
@@ -37,7 +39,11 @@ class ApplicationView extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-    initLobby: ()  => { dispatch(socketActions.initialSetup()) }
+    initLobby: () => {
+        dispatch(setupUserConnection());
+        dispatch(getLobbyUsers());
+        dispatch(setupPlaylistConnection());
+    }
 });
 
 const Application = connect(null, mapDispatchToProps)(ApplicationView)

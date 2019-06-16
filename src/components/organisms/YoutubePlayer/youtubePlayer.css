@@ -1,0 +1,59 @@
+.youtube-player-wrapper {
+    margin-bottom: 1.5rem;
+    margin-left: 1.5rem;
+    padding: 1.5rem;
+    background: rgb(0, 0, 0, 0.7);
+}
+
+.youtube-player {
+    pointer-events: none;
+    padding-bottom: 0.5rem;
+}
+
+.youtube-player-debug {
+    padding-bottom: 0.5rem;
+}
+
+.video-banner-title {
+    font-size: 1.4rem;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.jukebox-paused-title {
+    font-size: 1.5rem;
+    color: white;
+    margin-top: 1rem;
+    margin-bottom: 1.9rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+@media only screen and (max-width: 800px) {
+    .youtube-player {
+        height: 0;
+        width: 0;
+    }
+    
+    .youtube-player-debug {
+        height: 0;
+        width: 0;
+    }
+
+    .youtube-player-wrapper {
+        padding: 1.5rem;
+        margin-left: 0; 
+        background: rgb(0, 0, 0, 0.7);
+    }
+
+    .video-banner-title {
+        font-size: 1.3rem;
+        margin-top: -2.2rem;
+    }
+
+    .jukebox-paused-title {
+        margin-top: -2.2rem;
+        margin-bottom: 0;
+    }
+}

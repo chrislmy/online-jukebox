@@ -1,4 +1,4 @@
-import { dataLoading, dataLoadingSuccess } from "../request/actions";
+import { dataLoading } from "../request/actions";
 import { INIT_LOBBY } from '../request/requestNames';
 import socket from '../../socket/createSocketClient';
 import { NEW_USER, USER_JOINED } from '../../socket/socketMessages';

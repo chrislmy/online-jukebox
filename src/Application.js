@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Tabs from 'react-bootstrap/lib/Tabs';
+import Tab from 'react-bootstrap/lib/Tab';
 import './Application.css';
 import ApplicationHeader from './components/organisms/ApplicationHeader/applicationHeader';
 import SearchBar from './components/organisms/SearchBar/searchBar';
@@ -28,10 +30,14 @@ class ApplicationView extends Component {
                         <span className="current-playlist-section"><Playlist /></span>
                         <span className="youtube-player-container"><YoutubePlayer /></span>
                     </div>
-                    <LobbyControls/>
+                    {/* <LobbyControls/> */}
                 </div>
                 <div className="lower-section-container">
-                    <SearchBar />
+                    {/* <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
+                        <Tab eventKey={1} title="Tab 1"> */}
+                            <SearchBar />
+                        {/* </Tab>
+                    </Tabs>; */}
                 </div>
             </div>
         );

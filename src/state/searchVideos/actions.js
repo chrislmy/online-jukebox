@@ -13,7 +13,7 @@ const types = {
 };
 
 const searchVideos = (query) => (dispatch) => {
-    const path = `${config.keys.SERVER_BASE_ENDPOINT}/videos?query=${query}`;
+    const path = `${config.server.SERVER_BASE_ENDPOINT}/videos?query=${query}`;
     
     dispatch(dataLoading(SEARCH_VIDEO));
 

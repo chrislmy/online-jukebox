@@ -1,8 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { InputGroup, FormGroup, FormControl } from 'react-bootstrap/lib';
+import { AsyncTypeahead } from 'react-bootstrap-typeahead';
+import { InputGroup, FormGroup } from 'react-bootstrap/lib';
 import VideoSuggestions from '../VideoSuggestions/videoSuggestions';
 import { searchVideos } from '../../../state/searchVideos/actions';
+import { updateAutocompleteSuggestions } from '../../../state/autocomplete/actions';
+import 'react-bootstrap-typeahead/css/Typeahead.css';
 import './searchBar.css';
 
 const HeadPhoneIcon = () => (
@@ -23,18 +26,40 @@ class SearchBar extends React.Component {
         this.state = {
             query: ''
         }
+        this.searchBarRef = React.createRef();
         this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleTypeaheadChange = this.handleTypeaheadChange.bind(this);
+        this.handleKeyDown = this.handleKeyDown.bind(this);
     }
 
-    handleInputChange = (event) => {
+    handleInputChange = (query) => {
         this.setState({
-            query: event.target.value    
+            query
         });
+
+        this.props.updateSuggestions(query);
+    }
+
+    handleTypeaheadChange = (selected) => {
+        if(selected[0]){
+            const query = selected[0].name;
+            this.setState({
+                query
+            });
+            this.props.searchVideos(query);
+        }
+    }
+
+    // This is a horrible hack, think about a way to to this without submitting 2 requests!
+    handleKeyDown = (event) => {
+        if(event.keyCode === 13) {
+            this.props.searchVideos(this.state.query);
+        }
     }
 
     render() {
         const { query } = this.state;
-        const { videos } = this.props;
+        const { videos, isLoading, multiple, options } = this.props;
 
         return (
             <div className="video-search-section">
@@ -43,22 +68,27 @@ class SearchBar extends React.Component {
                         event.preventDefault();
                         this.props.searchVideos(query)
                     }}
+                    ref={this.searchBarRef}
                 >
                     <FormGroup className="search-bar-wrapper" controlId="formBasicText">
                         <InputGroup>
                             <InputGroup.Addon>
                                 <i className="fab fa-youtube-square"></i>
                             </InputGroup.Addon>
-                            <FormControl
-                                className="search-bar"
-                                type="text"
-                                value={query}
-                                placeholder="Enter a song name from Youtube"
-                                onChange={this.handleInputChange}
+                            <AsyncTypeahead
+                                id="youtube-autocomplete"
+                                allowNew={false}
+                                isLoading={isLoading}
+                                multiple={multiple}
+                                options={options}
+                                labelKey="name"
+                                onSearch={this.handleInputChange}
+                                onKeyDown={this.handleKeyDown}
+                                onChange={this.handleTypeaheadChange}
+                                placeholder="Enter a song name from Youtube ..."
                             />
                         </InputGroup>
                     </FormGroup>
-                    
                 </form>
                 <div className="video-suggestions">
                     { videos.length > 0
@@ -71,13 +101,26 @@ class SearchBar extends React.Component {
     }
 }
 
-const mapStateToProps = ({ searchVideos: { videos } }) => ({
-    videos 
+const mapStateToProps = ({ 
+    searchVideos: { videos },
+    autocomplete: { 
+        isLoading,
+        multiple,
+        options
+    }
+}) => ({
+    videos,
+    isLoading,
+    multiple,
+    options
 });
 
 const mapDispatchToProps = dispatch => ({
     searchVideos: (query) => { 
         dispatch(searchVideos(query));
+    },
+    updateSuggestions: (query) => {
+        dispatch(updateAutocompleteSuggestions(query));
     }
 });
 

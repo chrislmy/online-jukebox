@@ -1,0 +1,30 @@
+.empty-tab-prompt-container {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.empty-tab-prompt-prefix {
+    color: white;
+}
+
+.empty-tab-prompt-suffix {
+    color: #00e9de;
+    font-family: 'Roboto', sans-serif;
+}
+
+.empty-tab-placeholder-icon {
+    font-size: 10rem;
+    color: white;
+    margin-top: 3.6rem; 
+}
+
+@media only screen and (max-width: 800px) {
+    .empty-tab-placeholder-icon {
+        font-size: 4.5rem;
+        margin-top: 1.2rem; 
+    }
+    
+    .search-video-prompt-prefix, .search-video-prompt-suffix {
+        font-size: 1.5rem;
+    }
+}

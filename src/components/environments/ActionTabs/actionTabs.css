@@ -1,0 +1,31 @@
+.main-action-tabs {
+    margin: auto;
+    max-width: 100rem;;
+}
+
+/* Tabs styling */
+#action-tabs > .nav-tabs > li {
+    margin-bottom: 0;
+}
+  
+#action-tabs > .nav-tabs > li > a {
+    border-radius: 0;
+    background: #222;
+    color: white;
+    border-top: 2.5px solid transparent;
+    margin-bottom: 0; 
+}
+  
+#action-tabs > .nav-tabs > li > a:hover {
+    border: 0;
+    color: #00e9de;
+    border-top: 2.5px solid transparent;
+}
+  
+#action-tabs > .nav-tabs > li.active > a {
+    border-radius: 0;
+    color: #00e9de;
+    border-left: 0;
+    border-right: 0; 
+    border-top: 2.5px solid #00e9de;
+}

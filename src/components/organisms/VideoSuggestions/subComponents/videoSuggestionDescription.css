@@ -22,20 +22,7 @@
     margin-top: 1.2rem;
 }
 
-/* Icons */
-.music-icon {
-    margin-right: 1.2rem;
-}
-
-.youtube-icon, .stopwatch-icon {
-    margin-right: 1.3rem;
-}
-
 @media only screen and (max-width: 800px) {
-    .stopwatch-icon, .youtube-icon, .music-icon {
-        display: none;
-    }
-
     .suggestion-description {
         padding-left: 0.8rem;
         padding-right: 0;

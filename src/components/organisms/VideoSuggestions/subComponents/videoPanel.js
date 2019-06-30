@@ -6,7 +6,7 @@ import VideoSuggestionDescription from './videoSuggestionDescription';
 import { addVideoToQueue } from '../../../../state/playlist/actions';
 
 const VideoPanelView = ({ video, addVideoToQueue }) => {
-    const { videoId, title, duration } = video;
+    const { videoId, title, channelTitle, duration } = video;
 
     return (
         <Fragment>
@@ -14,7 +14,7 @@ const VideoPanelView = ({ video, addVideoToQueue }) => {
                 <div><img alt="video-thumbnail" className="suggestion-thumbnail" src={video.thumbnail} /></div>
                 <VideoSuggestionDescription
                     videoTitle={title}
-                    channelTitle={title}
+                    channelTitle={channelTitle}
                     videoDuration={duration} 
                 />
                 <Button

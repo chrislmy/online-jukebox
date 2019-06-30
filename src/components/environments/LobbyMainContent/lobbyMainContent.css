@@ -1,0 +1,39 @@
+.upper-section-container {
+    padding: 1.5rem;
+    background: #00e9de;
+}
+  
+.current-playlist-section {
+    text-align: center;
+}
+  
+.lower-section-container {
+    flex: 1 0 auto;
+    background: #222;
+    padding-top: 1.5rem;
+}
+
+@media only screen and (min-width: 800px) {
+    .player-view-container {
+      display: inline-flex;
+    }
+    .current-playlist-section {
+      padding-right: 1rem;
+      text-align: left;
+    }
+  }
+  
+@media only screen and (max-width: 800px) {
+    .current-playlist-section {
+        text-align: left;
+    }
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

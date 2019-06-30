@@ -1,10 +1,8 @@
-.video-search-section {
-    margin: auto;
-    max-width: 102rem;
-}
-
 .search-bar-wrapper {
+    margin-top: 0.5rem;
     padding: 0.8rem;
+    padding-left: 0;
+    padding-right: 0; 
 }
 
 .search-bar {
@@ -30,7 +28,7 @@
 }
 
 .head-phone-icon {
-    margin-top: 2rem;
+    margin-top: 4rem;
     font-size: 8.5rem;
 }
 

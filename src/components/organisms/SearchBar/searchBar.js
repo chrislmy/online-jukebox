@@ -3,22 +3,11 @@ import { connect } from 'react-redux';
 import { AsyncTypeahead } from 'react-bootstrap-typeahead';
 import { InputGroup, FormGroup } from 'react-bootstrap/lib';
 import VideoSuggestions from '../VideoSuggestions/videoSuggestions';
+import EmptyTabPlaceholder from '../../molecules/EmptyTabPlaceholder/emptyTabPlaceholder';
 import { searchVideos } from '../../../state/searchVideos/actions';
 import { updateAutocompleteSuggestions } from '../../../state/autocomplete/actions';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
 import './searchBar.css';
-
-const HeadPhoneIcon = () => (
-    <i className="fas fa-headphones-alt head-phone-icon"></i>
-);
-
-const VideoSearchPrompt = () => (
-    <div className="search-video-prompt-container">
-        <HeadPhoneIcon />
-        <h4 className="search-video-prompt-prefix"> Search for your favorite songs </h4>
-        <h5 className="search-video-prompt-suffix"> Let's get this party started! </h5>
-    </div>
-)
 
 class SearchBar extends React.Component {
     constructor(props) {
@@ -93,7 +82,7 @@ class SearchBar extends React.Component {
                 <div className="video-suggestions">
                     { videos.length > 0
                         ? <VideoSuggestions videos={videos} />
-                        : <VideoSearchPrompt />
+                        : <EmptyTabPlaceholder />
                     }
                 </div>
             </div>

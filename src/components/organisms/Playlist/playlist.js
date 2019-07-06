@@ -1,7 +1,5 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
-import VideoProgressBar from '../../molecules/VideoProgressBar/videoProgressBar';
-import convertTimeString from '../../../utils/convertTimeString';
 import './playlist.css';
 
 const EmptyPlaylistView = () => (
@@ -17,7 +15,6 @@ const PlaylistView = ({playlist, videoDuration}) => {
             <li className="playlist-item" key={index}>
                 <i className="music-icon fas fa-music"></i>{video.videoTitle}
             </li>
-            { index === 0 && <VideoProgressBar videoDuration={videoDuration}/> }
             <hr className="seperator"/>
         </Fragment>
     ))
@@ -35,7 +32,6 @@ const PlaylistView = ({playlist, videoDuration}) => {
 
 const mapStateToProps = state => ({
     playlist: state.playlist.currentPlaylist,
-    videoDuration: convertTimeString(state.video.videoDuration)
 });
 
 const Playlist = connect(mapStateToProps)(PlaylistView);

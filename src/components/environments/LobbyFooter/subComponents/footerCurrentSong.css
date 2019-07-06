@@ -1,0 +1,34 @@
+.footer-current-song {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-video-thumbnail {
+    width: 8rem;
+    height: 6rem;
+}
+
+.footer-song-info {
+    margin-left: 0.8rem;
+}
+
+.footer-video-title, .footer-video-channel, .footer-video-suggested-user {
+    margin-top: 0;
+    margin-bottom: 0.9rem;
+    width: 20rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.footer-video-title {
+    font-size: 1.4rem;
+}
+
+.footer-video-channel, .footer-video-suggested-user {
+    font-size: 1.2rem;
+}
+
+.footer-video-suggested-user {
+    color: #00e9de;
+}

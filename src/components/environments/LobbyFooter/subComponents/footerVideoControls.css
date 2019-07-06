@@ -1,0 +1,13 @@
+.footer-controls {
+    width: 73rem;
+    padding-left: 1rem;
+}
+
+.footer-control-buttons {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.footer-progress-bar {
+    display: block;
+}

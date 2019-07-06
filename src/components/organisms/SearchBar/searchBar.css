@@ -17,35 +17,11 @@
     background: #222;
 }
 
-.search-video-prompt-container {
-    color: white;
-    font-family: 'Roboto', sans-serif;
-}
-
-.search-video-prompt-suffix {
-    color: #00e9de;
-    font-family: 'Roboto', sans-serif;
-}
-
-.head-phone-icon {
-    margin-top: 4rem;
-    font-size: 8.5rem;
-}
-
 @media only screen and (max-width: 800px) {
     .search-bar {
         height: 1rem;
         padding: 1.3rem;
         border-radius: 0.2rem;
-    }
-
-    .head-phone-icon {
-        font-size: 4.5rem;
-        margin-top: 1.2rem; 
-    }
-    
-    .search-video-prompt-prefix, .search-video-prompt-suffix {
-        font-size: 1.5rem;
     }
 
     .video-search-section {

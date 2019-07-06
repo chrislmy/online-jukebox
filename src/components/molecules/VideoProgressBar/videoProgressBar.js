@@ -50,7 +50,11 @@ class VideoProgressBar extends React.Component {
 
 const VideoProgressBarWrapper = ({videoDuration}) => (
     <React.Fragment>
-        { videoDuration !== 0 && <VideoProgressBar videoDuration={videoDuration} /> }
+        { 
+            videoDuration ?
+            <VideoProgressBar videoDuration={videoDuration} /> :
+            <VideoProgressBar videoDuration={100} />
+        }
     </React.Fragment>
 );
 

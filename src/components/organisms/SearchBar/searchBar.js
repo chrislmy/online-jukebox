@@ -18,7 +18,6 @@ class SearchBar extends React.Component {
         this.searchBarRef = React.createRef();
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleTypeaheadChange = this.handleTypeaheadChange.bind(this);
-        this.handleKeyDown = this.handleKeyDown.bind(this);
     }
 
     handleInputChange = (query) => {
@@ -36,13 +35,6 @@ class SearchBar extends React.Component {
                 query
             });
             this.props.searchVideos(query);
-        }
-    }
-
-    // This is a horrible hack, think about a way to to this without submitting 2 requests!
-    handleKeyDown = (event) => {
-        if(event.keyCode === 13) {
-            this.props.searchVideos(this.state.query);
         }
     }
 
@@ -72,7 +64,6 @@ class SearchBar extends React.Component {
                                 options={options}
                                 labelKey="name"
                                 onSearch={this.handleInputChange}
-                                onKeyDown={this.handleKeyDown}
                                 onChange={this.handleTypeaheadChange}
                                 placeholder="Enter a song name from Youtube ..."
                             />

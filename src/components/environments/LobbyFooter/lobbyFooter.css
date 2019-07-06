@@ -1,0 +1,25 @@
+.lobby-footer-wrapper {
+    position: fixed;
+    width: 100%;
+    bottom: 8rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.lobby-footer {
+    position: absolute;
+    width: 100%;
+    color: white;
+    height: 8rem;
+    background: #2d2d2d;
+    z-index: 5;
+}
+
+.lobby-footer-content {
+    display: flex;
+    flex-direction: row;
+    max-width: 100rem;
+    margin: auto;
+    text-align: left;
+    padding-top: 1rem;
+    padding-bottom: 1rem; 
+}

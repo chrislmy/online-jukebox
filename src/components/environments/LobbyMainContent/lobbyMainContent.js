@@ -4,6 +4,7 @@ import ApplicationHeader from '../../organisms/ApplicationHeader/applicationHead
 import YoutubePlayer from '../../organisms/YoutubePlayer/youtubePlayer';
 import Playlist from '../../organisms/Playlist/playlist';
 import ActionTabs from '../ActionTabs/actionTabs';
+import LobbyFooter from '../LobbyFooter/lobbyFooter';
 import LobbyControls from '../../organisms/LobbyControls/lobbyControls';
 
 const LobbyMainContent = () => (
@@ -19,6 +20,7 @@ const LobbyMainContent = () => (
         <div className="lower-section-container">
             <ActionTabs />
         </div>
+        <LobbyFooter />
     </Fragment>
 );
 

@@ -1,24 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import logo from '../../../logo.svg';
 import './applicationHeader.css';
 
-const NothingPlayingHeader = () => (
-    <span>
-        Nothing Playing, Party's Dead
-    </span>
-);
-
-const ApplicationHeaderView = ({ nowPlayingTitle, username }) => (
-    <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="song-heading">
-            { (nowPlayingTitle !== '') 
-                ? (nowPlayingTitle)
-                : <NothingPlayingHeader />
-            }
-        </h1>
+const ApplicationHeaderView = ({username }) => (
+    <header className="application-header">
         <h3 className="welcome-heading">
             Welcome, <span className="username-field"> {username} </span>
         </h3>
@@ -26,12 +12,10 @@ const ApplicationHeaderView = ({ nowPlayingTitle, username }) => (
 );
 
 ApplicationHeaderView.propTypes = {
-    nowPlayingTitle: PropTypes.string,
     suggestedUser: PropTypes.string
 };
 
 const mapStateToProps = state => ({
-    nowPlayingTitle: state.video.videoTitle,
     username: state.user.username
 });
 

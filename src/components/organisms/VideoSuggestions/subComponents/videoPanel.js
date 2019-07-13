@@ -6,12 +6,12 @@ import VideoSuggestionDescription from './videoSuggestionDescription';
 import { addVideoToQueue } from '../../../../state/playlist/actions';
 
 const VideoPanelView = ({ video, addVideoToQueue }) => {
-    const { videoId, title, channelTitle, duration } = video;
+    const { videoId, thumbnail, title, channelTitle, duration } = video;
 
     return (
         <Fragment>
-            <li className="suggestion-list-item" key={video.videoId}>
-                <div><img alt="video-thumbnail" className="suggestion-thumbnail" src={video.thumbnail} /></div>
+            <li className="suggestion-list-item" key={videoId}>
+                <div><img alt="video-thumbnail" className="suggestion-thumbnail" src={thumbnail} /></div>
                 <VideoSuggestionDescription
                     videoTitle={title}
                     channelTitle={channelTitle}
@@ -20,7 +20,7 @@ const VideoPanelView = ({ video, addVideoToQueue }) => {
                 <Button
                     className="add-video-button"
                     bsStyle="primary"
-                    onClick={ () => addVideoToQueue(videoId, title, duration) }
+                    onClick={ () => addVideoToQueue(video) }
                     >
                         <i className="fas fa-plus plus-icon"></i>
                 </Button>

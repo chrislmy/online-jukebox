@@ -56,12 +56,7 @@ const setupPlaylistConnection = () => (dispatch) => {
     });
 };
 
-const addVideoToQueue = (videoId, videoTitle, videoDuration) => (dispatch) => {
-    const video = {
-        videoId,
-        videoTitle,
-        videoDuration
-    };
+const addVideoToQueue = (video) => (dispatch) => {
     dispatch(dataLoading(ADD_VIDEO_TO_PLAYLIST));
     addToPlaylist(video);
     dispatch(dataLoadingSuccess(ADD_VIDEO_TO_PLAYLIST));

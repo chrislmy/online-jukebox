@@ -1,18 +1,12 @@
-.App-logo {
-    animation: App-logo-spin infinite 15s linear;
-    height: 4rem;
-}
-
-.App-header {
+.application-header {
     background-color: #222;
-    height: 15rem;
-    padding: 1.5rem;
-    padding-top: 2rem;
+    padding: 0.8rem;
+    padding-top: 0.8rem;
     color: white;
     font-family: 'Roboto', sans-serif;
 }
 
-.song-heading, .welcome-heading {
+.welcome-heading {
     margin-top: 1.5rem;
     font-size: 1.5rem;
 }
@@ -22,20 +16,7 @@
 }
 
 @media only screen and (max-width: 800px) {
-    .App-logo {
-       display: none;
-    }
-
-    .song-heading {
-        margin-top: 0;
-        font-size: 1.3rem;
-    }
-
     .welcome-heading {  
         font-size: 1.2rem;
-    }
-    
-    .App-header {
-        height: 9rem;
     }
 }

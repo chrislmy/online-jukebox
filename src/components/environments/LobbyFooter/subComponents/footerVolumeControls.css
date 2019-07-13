@@ -1,0 +1,52 @@
+.footer-volume-controls {
+    display: inline-flex;
+    margin-left: 1.5rem;
+    height: 2.5rem;
+    margin-top: 1.3rem; 
+}
+
+/* Slider Override */
+.input-range {
+    width: 9rem;
+    margin-left: 0.9rem;
+    margin-top: 0.8rem;
+}
+
+.input-range__slider {
+    background: #00e9de;
+    border: 3px solid #00e9de;
+}
+
+.input-range__track--active {
+    background: #00e9de;
+}
+
+.input-range__label-container {
+    display: none;
+}
+/* End slider override */
+
+.mute-button {
+    background: none;
+    border: solid #00e9de 1px;
+    color: #00e9de;
+    padding: 0.3rem 0.5rem;
+}
+
+.mute-button:hover,
+.mute-button:focus {
+    background: none;
+    border: solid #00e9de 1px;
+    color: white;
+}
+
+.mute-button {
+    border-radius: 1.5rem;
+    font-size: 0.8em;
+}
+
+@media only screen and (max-width: 800px) {
+    .skip-video-button, .mute-button {
+        font-size: 1rem;
+    }
+}

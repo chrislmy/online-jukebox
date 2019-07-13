@@ -3,8 +3,14 @@ import { FETCH_LOBBY_USERS, UPDATE_LOBBY_USERS } from '../../socket/socketMessag
 
 const types = {
     UPDATE_VOLUME: 'updateVolume',
-    UPDATE_LOBBY_USERS: 'updateLobbyUsers'
+    UPDATE_LOBBY_USERS: 'updateLobbyUsers',
+    MOUNT_PLAYER: 'mountPlayer'
 };
+
+const mountPlayer = (player) => ({
+    type: types.MOUNT_PLAYER,
+    player
+});
 
 const updateVolume = (volume, player) => (dispatch) => {
     dispatch({
@@ -35,5 +41,6 @@ const getLobbyUsers = () => (dispatch) => {
 export {
     types,
     updateVolume,
-    getLobbyUsers
+    getLobbyUsers,
+    mountPlayer
 };

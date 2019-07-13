@@ -9,7 +9,7 @@ const EmptyPlaylistView = () => (
     </div>
 );
 
-const PlaylistView = ({playlist, videoDuration}) => {
+const PlaylistView = ({playlist}) => {
     const listItems = playlist.map((video,index) => (
         <Fragment key={index}>
             <li className="playlist-item" key={index}>

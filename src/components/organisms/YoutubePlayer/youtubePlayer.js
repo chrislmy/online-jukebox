@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import Youtube from 'react-youtube';
 import { connect } from 'react-redux';
 import config from '../../../config';
-import VideoBanner from './subComponents/videoBanner';
 import NoVideoBackdrop from './subComponents/noVideoBackdrop';
 import './youtubePlayer.css';
 import { updateQueue } from '../../../state/playlist/actions';
+import { mountPlayer } from '../../../state/lobby/actions';
 
 class YoutubePlayerView extends React.Component {
     constructor(props) {
@@ -22,12 +22,14 @@ class YoutubePlayerView extends React.Component {
 
     _onReady(event) {
         // Mount player to component
+        const player = event.target;
         this.setState({
-            player: event.target
+            player
         });
+        this.props.mountPlayer(player);
         window.player = event.target;
-        event.target.mute();
-        event.target.playVideo();
+        player.mute();
+        player.playVideo();
     }
 
     _onStateChange(event) {
@@ -38,7 +40,7 @@ class YoutubePlayerView extends React.Component {
     }
 
     render() {
-        const { currentVideoId, suggestedUser } = this.props
+        const { currentVideoId } = this.props
 
         const playerClassName = config.environment.debug ? 'youtube-player-debug' : 'youtube-player';
         const debugPlayerVars = { autoplay: 1 };
@@ -51,7 +53,7 @@ class YoutubePlayerView extends React.Component {
         const playerVars = config.environment.debug ? debugPlayerVars : defaultPlayerVars;
 
         const opts = {
-            height: '250',
+            height: '270',
             width: '420',
             playerVars
         }
@@ -66,25 +68,26 @@ class YoutubePlayerView extends React.Component {
                     onReady={this._onReady}
                     onStateChange={this._onStateChange}
                 />
-                { suggestedUser !== '' 
-                    ? <VideoBanner suggestedUser={suggestedUser} videoId={currentVideoId} player={this.state.player}/>
-                    : <h4 className="jukebox-paused-title">There are currently no songs in the playlist</h4>
-                }
             </div>
         )
     }
 }
 
 YoutubePlayerView.propTypes = {
-    currentVideoId: PropTypes.string,
-    suggestedUser: PropTypes.string
+    currentVideoId: PropTypes.string
 };
 
 const mapStateToProps = state => ({
-    currentVideoId: state.video.videoId,
-    suggestedUser: state.video.suggestedUser
+    currentVideoId: state.video.videoId
 });
 
-const YoutubePlayer = connect(mapStateToProps)(YoutubePlayerView);
+
+const mapDispatchToProps = dispatch => ({
+    mountPlayer: (player) => { 
+        dispatch(mountPlayer(player));
+    }
+});
+
+const YoutubePlayer = connect(mapStateToProps, mapDispatchToProps)(YoutubePlayerView);
 
 export default YoutubePlayer

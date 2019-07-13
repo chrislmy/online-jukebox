@@ -15,7 +15,7 @@
 .footer-video-title, .footer-video-channel, .footer-video-suggested-user {
     margin-top: 0;
     margin-bottom: 0.9rem;
-    width: 20rem;
+    width: 23rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -31,4 +31,10 @@
 
 .footer-video-suggested-user {
     color: #00e9de;
+}
+
+.empty-song-placeholder {
+    width: 8rem;
+    height: 6rem;
+    background: rgba(255,255,255,0.85);
 }

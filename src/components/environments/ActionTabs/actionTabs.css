@@ -1,6 +1,7 @@
 .main-action-tabs {
     margin: auto;
-    max-width: 100rem;;
+    max-width: 100rem;
+    margin-bottom: 8rem;
 }
 
 /* Tabs styling */

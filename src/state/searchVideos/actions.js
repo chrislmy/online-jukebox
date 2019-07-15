@@ -13,7 +13,9 @@ const types = {
 };
 
 const searchVideos = (query) => (dispatch) => {
-    const path = `${config.server.SERVER_BASE_ENDPOINT}/videos?query=${query}`;
+    // TODO: use axios instance for this
+    const environment = process.env.NODE_ENV;
+    const path = `${config.server.baseUrl[environment]}/videos?query=${query}`;
     
     dispatch(dataLoading(SEARCH_VIDEO));
 
